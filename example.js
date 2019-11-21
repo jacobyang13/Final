@@ -1,1 +1,1 @@
-I fucking jvg eat ass
+I fucking eat ass
