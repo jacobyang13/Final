@@ -45,7 +45,8 @@ export const renderHeroEditForm = function () {
 
     <input id = "gf" type="checkbox" >Gluten Free Options<br>
     <input id = "kosher" type="checkbox" >Kosher<br>
-    <input id = "nut" type="checkbox">Nut-Allergy Friendly<br><br>
+    <input id = "nut" type="checkbox">Nut-Allergy Friendly<br>
+    <input id = "vegan" type="checkbox">Vegan Friendly<br><br>
     <input class = "s" type="submit" value="Filter">
 
         
@@ -58,6 +59,7 @@ export const handleEditFormSubmit = function (event) {
 
     event.preventDefault();
     const $root = $('#root');
+    $(".noresults").remove();
     
     for (let i = 0; i < updated_data.length; i++) {
         let curr_id = updated_data[i].id;
@@ -74,6 +76,9 @@ export const handleEditFormSubmit = function (event) {
     }
     if (document.getElementById("nut").checked == true) {
         updated_data = updated_data.filter(x => x.nut_friendly == true);
+    }
+    if (document.getElementById("vegan").checked == true){
+        updated_data = updated_data.filter(x => x.vegan == true);
     }
     
     updateDOM(updated_data);
@@ -99,13 +104,14 @@ export const loadHeroesIntoDOM = function (heroes) {
 export const updateDOM = function (input_arr) {
     // Grab a jQuery reference to the root HTML element
     const $root = $('#root');
-
-    for (let i = 0; i < input_arr.length; i++) {
-        let t = renderHeroCard(input_arr[i]);
-        $root.append(t);
+    if (input_arr.length == 0) {
+        $(".filter").append(`<p class="noresults">NO RESULTS, NARROW SEARCH</p>`);
+    } else {
+        for (let i = 0; i < input_arr.length; i++) {
+            let t = renderHeroCard(input_arr[i]);
+            $root.append(t);
+        }
     }
-
-
 };
 
 
