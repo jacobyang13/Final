@@ -29,8 +29,10 @@ export const renderHeroCard = function (hero) {
             
             <img src=${hero.img} alt="Hero Image">
             <button editween="${hero.id}" class = "heroes" type="button" 
-            style="background-color: white; font-size: 20px; border: 1px solid black; color: ${hero.color}; border-radius: 20%;";>Edit</button>
+            style="background-color: white; font-size: 20px; border: 1px solid black; color: ${hero.color}; border-radius: 20%;";>Reviews</button>
         
+            //
+            
         </div>
         `
         ;
