@@ -22,13 +22,7 @@ export const renderHeroCard = function (hero) {
         <body>
             <span style="color:${hero.color};font-weight:bold">${hero.name}</span>
             
-            <p style = "color: white;">${hero.first} ${hero.last}</p>
-            <p style = "color: white;"> ${hero.description}</p>
-            <p style = "color: white;"> First Seen: ${hero.firstSeen}</p>
-            
             <img src=${hero.img} alt="Hero Image">
-            <button editween="${hero.id}" class = "heroes" type="button" 
-            style="background-color: white; font-size: 20px; border: 1px solid black; color: ${hero.color}; border-radius: 20%;";>Edit</button>
         </body>
         </div>`;
 };
