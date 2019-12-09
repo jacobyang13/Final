@@ -20,6 +20,7 @@ const heroicData = [{
     kosher_options: false,
     gf: true,
     nut_friendly: true,
+    vegan: false,
 }, {
     id: 1,
     name: "Moe's Southwest Grill",
@@ -31,6 +32,7 @@ const heroicData = [{
     kosher_options: false,
     gf: true,
     nut_friendly: true,
+    vegan: false,
 }, {
     id: 2,
     name: "Chipotle Mexican Grill",
@@ -42,6 +44,7 @@ const heroicData = [{
     kosher_options: true,
     gf: true,
     nut_friendly: true,
+    vegan: false,
 }, {
     id: 3,
     name: "The Pizza Press",
@@ -53,6 +56,7 @@ const heroicData = [{
     kosher_options: false,
     gf: false,
     nut_friendly: true,
+    vegan: false,
 }, {
     id: 4,
     name: "Bandito's Mexican Cafe",
@@ -64,6 +68,7 @@ const heroicData = [{
     kosher_options: false,
     gf: true,
     nut_friendly: true,
+    vegan: false,
 }, {
     id: 5,
     name: "Ms. Mong",
@@ -75,6 +80,7 @@ const heroicData = [{
     kosher_options: false,
     gf: false,
     nut_friendly: false,
+    vegan: false,
 }, {
     id: 6,
     name: "Sutton's Drug Store",
@@ -86,6 +92,7 @@ const heroicData = [{
     kosher_options: false,
     gf: false,
     nut_friendly: true,
+    vegan: false,
 }, {
     id: 7,
     name: "Panera Bread",
@@ -97,6 +104,7 @@ const heroicData = [{
     kosher_options: true,
     gf: false,
     nut_friendly: true,
+    vegan: true,
 }, {
     id: 8,
     name: "Chabad House",
@@ -108,5 +116,6 @@ const heroicData = [{
     kosher_options: true,
     gf: false,
     nut_friendly: false,
+    vegan: true,
 }
 ];

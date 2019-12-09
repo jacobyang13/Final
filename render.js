@@ -1,15 +1,5 @@
-/**
- * Course: COMP 426
- * Assignment: a05
- * Author: <type your name here>
- *
- * This script uses jQuery to build an HTML page with content taken from the
- * data defined in data.js.
- */
 let master_length = heroicData.length;
 let updated_data = heroicData;
-
-
 
 /**
  * Given a hero object (see data.js), this function generates a "card" showing
@@ -17,7 +7,6 @@ let updated_data = heroicData;
  * @param hero  A hero object (see data.js)
  */
 export const renderHeroCard = function (hero) {
-    // TODO: Copy your code from a04 to render the hero card
     return `<div id="${hero.id}" tag = "${hero.id}" style="background-color:${hero.backgroundColor}; width: 40%;">
         <body>
             <span style="color:${hero.color};font-weight:bold">${hero.name}</span>
@@ -30,8 +19,6 @@ export const renderHeroCard = function (hero) {
         </div>`;
 };
 
-
-
 /**
  * Given a hero object, this function generates a <form> which allows the
  *     user to edit the fields of the hero. The form inputs should be
@@ -39,22 +26,16 @@ export const renderHeroCard = function (hero) {
  * @param hero  The hero object to edit (see data.js)
  */
 export const renderHeroEditForm = function () {
-    // TODO: Copy your code from a04 to render the hero edit form
-
-
     return `<div id = "criteria" class="section">
     <form>
     <input id = "gf" type="checkbox" >Gluten Free Options<br>
     <input id = "kosher" type="checkbox" >Kosher Options<br>
-    <input id = "nut" type="checkbox">Nut-Allergy Friendly<br><br>
+    <input id = "nut" type="checkbox">Nut-Allergy Friendly<br>
+    <input id = "vegan" type="checkbox">Vegan Friendly<br><br>
     <input class = "s" type="submit" value="Submit">
-  </form>
-        
-            </div>`;
+    </form>
+    </div>`;
 };
-
-
-
 
 /**
  * Handles the JavaScript event representing a user clicking on the "cancel"
@@ -62,12 +43,9 @@ export const renderHeroEditForm = function () {
  * @param event  The JavaScript event that is being handled
  */
 export const handleEditFormSubmit = function (event) {
-
     event.preventDefault();
     const $root = $('#root');
 
-    
-    
     for (let i = 0; i < updated_data.length; i++) {
         let curr_id = updated_data[i].id;
             let r = document.getElementById(curr_id.toString());
@@ -84,7 +62,9 @@ export const handleEditFormSubmit = function (event) {
     if (document.getElementById("nut").checked == true) {
         updated_data = updated_data.filter(x => x.nut_friendly == true);
     }
-    
+    if (document.getElementById("vegan").checked == true){
+        updated_data = updated_data.filter(x => x.vegan == true);
+    }
     updateDOM(updated_data);
 };
 
@@ -126,9 +106,6 @@ export const updateDOM = function (input_arr) {
     // $root.on('click', '.s', handleEditFormSubmit);
 
 };
-
-
-
 /**
  * Use jQuery to execute the loadHeroesIntoDOM function after the page loads
  */
