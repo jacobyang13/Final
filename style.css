@@ -1,0 +1,38 @@
+.filter{
+    background-color: rgb(241, 204, 179);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em 1em; 
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+}
+.s{
+    color: red;
+}
+
+.result {
+    max-width: 1000px;
+    max-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em 1em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  #criteria{
+      background-color: peachpuff;
+  }
+
+  
+    #root {
+        background-image: url('/r_icons/morehead.jpg');
+        background-attachment: scroll; 
+
+      }
+  
+
+  
