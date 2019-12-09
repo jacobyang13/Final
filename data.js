@@ -12,7 +12,7 @@
 const heroicData = [{
     id: 0,
     name: "Hibachi & Co",
-    adress: "155 E Franklin St, Chapel Hill, NC 27514",
+    address: "155 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
     img: "r_icons/hibachi.png",
     color: "black",
@@ -23,7 +23,7 @@ const heroicData = [{
 }, {
     id: 1,
     name: "Moe's Southwest Grill",
-    adress: "110 W Franklin St, Chapel Hill, NC 27516",
+    address: "110 W Franklin St, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
     img: "r_icons/moes.png",
     color: "black",
@@ -34,7 +34,7 @@ const heroicData = [{
 }, {
     id: 2,
     name: "Chipotle Mexican Grill",
-    adress: "301 W Franklin St, Chapel Hill, NC 27516",
+    address: "301 W Franklin St, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
     img: "r_icons/chipoltle.png",
     color: "black",
@@ -45,7 +45,7 @@ const heroicData = [{
 }, {
     id: 3,
     name: "The Pizza Press",
-    adress: "133 W Franklin St Suite 120 Suite 120, Chapel Hill, NC 27516",
+    address: "133 W Franklin St Suite 120 Suite 120, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
     img: "r_icons/pizzapress.png",
     color: "black",
@@ -56,7 +56,7 @@ const heroicData = [{
 }, {
     id: 4,
     name: "Bandito's Mexican Cafe",
-    adress: "159 1/2 E Franklin St, Chapel Hill, NC 27514",
+    address: "159 1/2 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
     img: "r_icons/banditos.jpg",
     color: "black",
@@ -67,7 +67,7 @@ const heroicData = [{
 }, {
     id: 5,
     name: "Ms. Mong",
-    adress: "163 E Franklin St, Chapel Hill, NC 27514",
+    address: "163 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
     img: "r_icons/mong.png",
     color: "black",
@@ -78,7 +78,7 @@ const heroicData = [{
 }, {
     id: 6,
     name: "Sutton's Drug Store",
-    adress: "159 E Franklin St, Chapel Hill, NC 27514",
+    address: "159 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
     img: "r_icons/suttons.jpg",
     color: "black",
@@ -89,7 +89,7 @@ const heroicData = [{
 }, {
     id: 7,
     name: "Panera Bread",
-    adress: "213 W Franklin St, Chapel Hill, NC 27516",
+    address: "213 W Franklin St, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
     img: "r_icons/panera.png",
     color: "black",
@@ -100,7 +100,7 @@ const heroicData = [{
 }, {
     id: 8,
     name: "Chabad House",
-    adress: "Somewhere on Malette St.",
+    address: "Somewhere on Malette St.",
     hours: "11AM-10PM",
     img: "r_icons/chabad.jpg",
     color: "black",

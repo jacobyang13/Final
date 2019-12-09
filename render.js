@@ -22,6 +22,9 @@ export const renderHeroCard = function (hero) {
         <body>
             <span style="color:${hero.color};font-weight:bold">${hero.name}</span>
             
+            <p style = "color: white;">${hero.address}</p>
+            <p style = "color: white;"> ${hero.hours}</p>
+            
             <img src=${hero.img} alt="Hero Image">
         </body>
         </div>`;
