@@ -24,9 +24,8 @@ export const renderHeroCard = function (hero) {
         
             <h class = "title" style="color:black; font-weight:bold">${hero.name}</h>
             <br>
-            <h class = "subtitle" style = "color: blue;">${hero.adress}</h>
-            <p style = "color: white;"> ${hero.description}</p>
-            <p style = "color: white;"> First Seen: ${hero.firstSeen}</p>
+            <h class = "subtitle" style = "color: blue;">${hero.address}</h>
+            <p style = "color: white;"> ${hero.hours}</p>
             
             <img src=${hero.img} alt="Hero Image">
             <button editween="${hero.id}" class = "heroes" type="button" 
