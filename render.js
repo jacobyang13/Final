@@ -9,8 +9,6 @@
 // let master_length = heroicData.length;
 let updated_data = heroicData;
 
-
-
 /**
  * Given a hero object (see data.js), this function generates a "card" showing
  *     the hero's name, information, and colors.
@@ -55,7 +53,6 @@ export const renderHeroEditForm = function () {
 
 
 export const handleEditFormSubmit = function (event) {
-
     event.preventDefault();
     const $root = $('#root');
     
@@ -75,7 +72,9 @@ export const handleEditFormSubmit = function (event) {
     if (document.getElementById("nut").checked == true) {
         updated_data = updated_data.filter(x => x.nut_friendly == true);
     }
-    
+    if (document.getElementById("vegan").checked == true){
+        updated_data = updated_data.filter(x => x.vegan == true);
+    }
     updateDOM(updated_data);
 };
 
@@ -107,9 +106,6 @@ export const updateDOM = function (input_arr) {
 
 
 };
-
-
-
 /**
  * Use jQuery to execute the loadHeroesIntoDOM function after the page loads
  */
