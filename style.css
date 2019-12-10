@@ -11,6 +11,26 @@
 .s{
     color: red;
 }
+.rating{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+}
+.rating input{
+    /*display: none;*/
+}
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    background: #ccc;
+}
+.rating label:before{
+    content: '\f005';
+
+}
 
 .result {
     max-width: 1000px;
@@ -27,12 +47,10 @@
       background-color: peachpuff;
   }
 
-  
-    #root {
+  #root {
         background-image: url('/r_icons/morehead.jpg');
         background-attachment: scroll; 
-
-      }
+  }
   
 
   

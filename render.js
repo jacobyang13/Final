@@ -1,24 +1,7 @@
-/**
- * Course: COMP 426
- * Assignment: a05
- * Author: <type your name here>
- *
- * This script uses jQuery to build an HTML page with content taken from the
- * data defined in data.js.
- */
-// let master_length = heroicData.length;
 let updated_data = heroicData;
-
-
-
-/**
- * Given a hero object (see data.js), this function generates a "card" showing
- *     the hero's name, information, and colors.
- * @param hero  A hero object (see data.js)
- */
+/////onclick="location.href = 'reviews.js'
+///onclick = "handleReviewButton("${hero.id}")"
 export const renderHeroCard = function (hero) {
-    // TODO: Copy your code from a04 to render the hero card
-    // 
     return `
     <div id ="${hero.id}" class = "result"  style="background-color:${hero.backgroundColor}; width: 40%;">
         
@@ -28,7 +11,7 @@ export const renderHeroCard = function (hero) {
             <p style = "color: white;"> ${hero.hours}</p>
             
             <img src=${hero.img} alt="Hero Image">
-            <button editween="${hero.id}" class = "button" type="button" 
+            <button editween="${hero.id}" class = "review" id = "${hero.id}" type="button" onclick="location.href = 'login.html'";
             style="background-color: white; font-size: 20px; border: 1px solid black; color: ${hero.color}; border-radius: 20%;";>Reviews</button>
             
         </div>
@@ -36,9 +19,10 @@ export const renderHeroCard = function (hero) {
         ;
 };
 
-
+function handleReviewButton(heroid){
+    location.replace("login.html");
+}
 export const renderHeroEditForm = function () {
-
     return `<div class="filter">
 
     <span class = "title">Filter Options</span> <br>
@@ -48,12 +32,8 @@ export const renderHeroEditForm = function () {
     <input id = "nut" type="checkbox">Nut-Allergy Friendly<br>
     <input id = "vegan" type="checkbox">Vegan Friendly<br><br>
     <input class = "s" type="submit" value="Filter">
-
-        
-            </div>`;
+    </div>`;
 };
-
-
 
 export const handleEditFormSubmit = function (event) {
 
@@ -84,7 +64,6 @@ export const handleEditFormSubmit = function (event) {
     updateDOM(updated_data);
 };
 
-
 export const loadHeroesIntoDOM = function (heroes) {
     // Grab a jQuery reference to the root HTML element
     const $root = $('#root');
@@ -98,11 +77,10 @@ export const loadHeroesIntoDOM = function (heroes) {
     }
 
     $root.on('click', '.s', handleEditFormSubmit);
-
+    $root.on('click', '.review',HandleEditFormSubmit);
 };
 
 export const updateDOM = function (input_arr) {
-    // Grab a jQuery reference to the root HTML element
     const $root = $('#root');
     if (input_arr.length == 0) {
         $(".filter").append(`<p class="noresults">NO RESULTS, NARROW SEARCH</p>`);
@@ -114,13 +92,6 @@ export const updateDOM = function (input_arr) {
     }
 };
 
-
-
-/**
- * Use jQuery to execute the loadHeroesIntoDOM function after the page loads
- */
 $(function () {
     loadHeroesIntoDOM(heroicData);
-
 });
-
