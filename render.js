@@ -28,10 +28,8 @@ export const renderHeroCard = function (hero) {
             <p style = "color: white;"> ${hero.hours}</p>
             
             <img src=${hero.img} alt="Hero Image">
-            <button editween="${hero.id}" class = "heroes" type="button" 
+            <button editween="${hero.id}" class = "button" type="button" 
             style="background-color: white; font-size: 20px; border: 1px solid black; color: ${hero.color}; border-radius: 20%;";>Reviews</button>
-        
-            //
             
         </div>
         `
