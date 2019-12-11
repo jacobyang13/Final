@@ -1,4 +1,12 @@
-
+.start{
+  background-color: rgb(243, 247, 246);
+  color: rgb(0, 65, 139);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #F7F7F7;
+}
 .filter{
     background-color: rgb(241, 204, 179);
     max-width: 800px;
@@ -22,6 +30,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(160, 81, 160, 0.521);
   }
 
   #criteria{
