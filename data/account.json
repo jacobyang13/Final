@@ -27,6 +27,20 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "newaccount": {
+      "passwordHash": "$2b$10$lf6ku/aYs7YnPA/p9pwBmeskkF8tB7M2Rp.fpL56T5qu/Mv6QNG3u",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "weener": {
+      "passwordHash": "$2b$10$snkEgNxFoHymvqgGCEhFKOZBzzGt0YIbt5dt5zJr9SKaVXXj/6bpS",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }
