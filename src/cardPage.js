@@ -21,7 +21,6 @@ export class cardPage extends React.Component {
       kosher: false,
       nutAllergy: false,
       veganFriendly: false
-
     };
 
   }
