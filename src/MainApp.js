@@ -40,10 +40,8 @@ export class MainApp extends React.Component {
   handleChangePassword = event => {
     this.setState({ password: event.target.value });
   }
-
   handleSubmitLogin = event => {
     event.preventDefault();
-
 
     accountRoot.post('/login', {
       "name": this.state.login,
@@ -64,7 +62,6 @@ export class MainApp extends React.Component {
   handleCreateNew = event => {
     event.preventDefault();
 
-
     accountRoot.post('/create', {
       "name": this.state.login,
       "pass": this.state.password,
@@ -83,9 +80,7 @@ export class MainApp extends React.Component {
     event.preventDefault();
 
     const data = {
-  
        "authors":{"first": this.state.name}
-        
     };
 
     pubRoot.post('/examplePost', { data })
@@ -99,9 +94,7 @@ export class MainApp extends React.Component {
     event.preventDefault();
 
     const data = {
-  
        "authors":{"first": this.state.name}
-        
     };
 
     pubRoot.get('/examplePost/authors', { data })
@@ -154,8 +147,6 @@ export class MainApp extends React.Component {
     return (
       <div>
           <Nav/>
-     
-       
        <main>
        <CardPage/>
         {/* <form onSubmit={this.handleSubmit}>
