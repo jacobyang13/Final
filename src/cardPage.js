@@ -21,28 +21,29 @@ export class cardPage extends React.Component {
      
   }
   renderCards = () => {
-    for (let i = 0; i < heroes.length; i++) {
-      console.log(heroes)
-       return (this.renderHeroCard(heroes[i]));
-  }
+  return (heroes.map((hero, id) => (
+
+
+      <div>
+      <div id = {hero.id}  className = "result" >
+         
+         <h1 className = "title" >{hero.name}</h1>
+         <br/>
+         <h1 className = "subtitle" >{hero.address}</h1>
+         <p > {hero.hours}</p>
+         
+         <img src= {hero.img} alt="Hero Image"/>
+         <button editween= {hero.id} className = "button" type="button" >Reviews</button>
+         
+     </div>
+     </div>
+             
+
+  )));
   }
   renderHeroCard = (hero) => {
 
-    return (
-     <div>
-     <div id = {hero.id}  className = "result" >
-        
-        <h1 className = "title" >{hero.name}</h1>
-        <br/>
-        <h1 className = "subtitle" >{hero.address}</h1>
-        <p > {hero.hours}</p>
-        
-        <img src= {hero.img} alt="Hero Image"/>
-        <button editween= {hero.id} className = "button" type="button" >Reviews</button>
-        
-    </div>
-    </div>
-            )
+    
 };
  
   renderHeroEditForm = () => {
