@@ -1,19 +1,12 @@
 {
     "restaurants":{
       "hibachi":{
-<<<<<<< HEAD
-        "reviews": []
-      } ,
-      "moes": {
-       "reviews": []
-=======
         "reviews": [],
         "rating": []
       } ,
       "moes": {
        "reviews": [],
        "rating": []
->>>>>>> 61814f0af965ba33ceee9ee6025d1516bfdba264
     }
     }
   

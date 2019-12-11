@@ -17,15 +17,19 @@ export class cardPage extends React.Component {
       heroCards: {},
       defaultHeroCards: {},
       filterCards:{},
+      ratings :[],
       gf: false,
       kosher: false,
       nutAllergy: false,
-      veganFriendly: false
+      veganFriendly: false,
+      reviewRating: ''
+
 
     };
 
   }
   componentDidMount = () => {
+    this.setState({guest: this.props.guest})
     pubRoot.get('/restaurants')
     .then(res => {
       this.setState({
@@ -116,15 +120,29 @@ handleFilterChange  = event => {
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
 <input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
-
         </div>
     </div>
             )
 };
-
+setReviewButton(event) {
+  
+  this.setState({reviewRating: event.target.value})
+}
+handleSubmitReview = event =>{
+  event.preventDefault();
+  console.log(this.state.reviewRating)
+  this.setState({
+    ratings: this.state.ratings.concat(this.state.reviewRating)
+  })
+ console.log(this.state.ratings)
+}
   render() {
     return (
       <div>
+        <div>
+          <p>{this.state.guest}</p>
+          <h1>You are a guest: </h1>
+        </div>
         {this.renderHeroEditForm()}
         {Object.keys(this.state.heroCards).map((key, id) => (
 
@@ -138,17 +156,19 @@ handleFilterChange  = event => {
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
-   <form onSubmit>
-                  <span>Ratings:</span><progress class="progress is-info" value="50" max="100" data-text="50%">30</progress>
-                  <p class= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
-                      <input id="r1" type="radio" name="star" value="5"></input><label for="r1">1&#9733;</label>
-                      <input id="r2" type="radio" name="star" value="4"></input><label for="r2">2&#9733;</label>
-                      <input id="r3" type="radio" name="star" value="3"></input><label for="r3">3&#9733;</label>
-                      <input id="r4" type="radio" name="star" value="2"></input><label for="r4">4&#9733;</label>
-                      <input id="r5" type="radio" name="star" value="1"></input><label for="r5">5&#9733;</label><br></br>
-                      </p>
-                      <div class ="buttons is-centered">
-                        <button class = "button is-link is-centered" type={this.state.heroCards[key].id} value="Submit Review" name="submit">Submit Review</button>
+        <form>
+                  <span>Ratings:</span><progress className="progress is-info" value="50" max="100" data-text="50%">30</progress>
+                  <p onChange={this.setReviewButton.bind(this)} className= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
+          
+                      <input id="r1" type="radio" name="star" value="1"></input><label htmlFor="r1">1&#9733;</label>
+                      <input id="r2" type="radio" name="star" value="2"></input><label htmlFor="r2">2&#9733;</label>
+                      <input id="r3" type="radio" name="star" value="3"></input><label htmlFor="r3">3&#9733;</label>
+                      <input id="r4" type="radio" name="star" value="4"></input><label htmlFor="r4">4&#9733;</label>
+                      <input id="r5" type="radio" name="star" value="5"></input><label htmlFor="r5">5&#9733;</label><br></br>
+                  
+                  </p>
+                      <div className ="buttons is-centered">
+                        <button onClick={this.handleSubmitReview} className = "button is-link is-centered" type={this.state.heroCards[key].id} value="Submit Review" name="submit">Submit Review</button>
                       </div>
               </form>   
 </div>

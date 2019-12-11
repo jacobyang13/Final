@@ -1,7 +1,28 @@
 {
   "users": {
     "noahgm": {
-      "passwordHash": "$2b$10$5KJNb/FNr7vA4VWBTdioTOlqIEYEAxCh7kJ2xmXI7zyl33MDxWMTa",
+      "passwordHash": "$2b$10$.OcSL8EiqWig7v7vpqTvDOMZ9Hv2qcoy4YL0TxYR2qIgl4PA4f31a",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "fake": {
+      "passwordHash": "$2b$10$qzgv92KDtfizCIFPzmsjj.mcqKhqjoizG6QkYIMaO8b0MEs2zqpja",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "jvanglish": {
+      "passwordHash": "$2b$10$EgcUjK7iuqgRlPh5EigAgOqc5R20fYCJyvc.yO3PquzVBkAYkfM9i",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "jyy": {
+      "passwordHash": "$2b$10$Uvvd4uLdMCTCZ5/LsEG/SeNtJtyotPwN7v8T.mWyHJifdoJUt2S8G",
       "data": {
         "role": 2,
         "description": "New User"
