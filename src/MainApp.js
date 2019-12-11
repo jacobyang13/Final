@@ -18,7 +18,8 @@ export class MainApp extends React.Component {
       person:[],
       login: '',
       password: "",
-      start: 0
+      start: 0,
+      newAccount: false
     };
 
   }
@@ -67,6 +68,8 @@ export class MainApp extends React.Component {
       }
     })
       .then(res => {
+        alert("Account created Succesfully");
+        this.setState({newAccount: false});
         console.log(res);
         console.log(res.data);
       })
@@ -91,7 +94,7 @@ export class MainApp extends React.Component {
     this.setState({
       start: 200
     })
-    this.renderPage();
+    // this.renderPage();
   }
 
   handleLogOut = event => {
@@ -117,7 +120,30 @@ export class MainApp extends React.Component {
       
       })
   }
-  renderStart(){
+  changeNewAccountState = () =>{
+
+    this.setState({newAccount: true});
+
+  }
+
+  renderRegistration(){
+    return (
+         <div className="register">
+      <form onSubmit={this.handleCreateNew}>
+      <label>
+         Login:
+        <input type="text" name="Login" onChange={this.handleChangeLogin} />
+      </label>
+      <label>
+        Password:
+        <input type="text" name="Password" onChange={this.handleChangePassword} />
+      </label>
+      <button type="submit">Create New User</button>
+    </form>
+    </div>
+    )
+  }
+  renderLogin(){
     
     return (
       <div className = "start">
@@ -136,31 +162,39 @@ export class MainApp extends React.Component {
           </label>
           <button type="submit">Submit</button>
         </form>
-        <br></br>
-        <form onSubmit={this.handleCreateNew}>
         <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
-          <label>
-             Login:
-            <input type="text" name="Login" onChange={this.handleChangeLogin} />
-          </label>
-          <label>
-            Password:
-            <input type="text" name="Password" onChange={this.handleChangePassword} />
-          </label>
-          <button type="submit">Create New User</button>
-        </form>
+        <br></br>
+        <p>OR, <a href="#" onClick={this.changeNewAccountState}>Create A New Account</a></p>
+
 
       </div>
         </main>
       </div>
     );
+
   }
+  renderStart(){
+    
+    return (
+      <div className = "start">
+
+         <div>
+        {this.state.newAccount === false
+          ? this.renderLogin()
+          : this.renderRegistration()}
+      </div>
+
+      </div>
+    );
+
+  }
+
   renderPage() {
     return (
       <div>
           <Nav className = "nav"/>
        <main>
-       <CardPage/>
+       <CardPage />
         {/* <form onSubmit={this.handleSubmit}>
           <label>
             Person Name:
@@ -184,7 +218,7 @@ export class MainApp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.start === 2
+        {this.state.start ===0
           ? this.renderStart()
           : this.renderPage()}
       </div>

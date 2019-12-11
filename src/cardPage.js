@@ -10,6 +10,7 @@ export class cardPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      guest: false,
       name: "",
       person:[],
       login: '0',
@@ -133,12 +134,19 @@ handleFilterChange  = event => {
    
    <h1 className = "title" >{this.state.heroCards[key].name}</h1>
    <br/>
+<<<<<<< HEAD
    {this.handleViewMap()}
+=======
+>>>>>>> 61814f0af965ba33ceee9ee6025d1516bfdba264
    <h1 className = "subtitle" >{this.state.heroCards[key].address}</h1>
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
+<<<<<<< HEAD
    <form >
+=======
+   <form onSubmit>
+>>>>>>> 61814f0af965ba33ceee9ee6025d1516bfdba264
                   <span>Ratings:</span><progress class="progress is-info" value="50" max="100" data-text="50%">30</progress>
                   <p class= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
                       <input id="r1" type="radio" name="star" value="5"></input><label for="r1">1&#9733;</label>
