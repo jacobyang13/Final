@@ -4,7 +4,6 @@ let updated_data = heroicData;
 export const renderHeroCard = function (hero) {
     return `
     <div id ="${hero.id}" class = "result"  style="background-color:${hero.backgroundColor}; width: 40%;">
-        
             <h class = "title" style="color:black; font-weight:bold">${hero.name}</h>
             <br>
             <h class = "subtitle" style = "color: blue;">${hero.address}</h>
@@ -31,7 +30,6 @@ export const renderHeroCard = function (hero) {
         `
         ;
 };
-
 function handleReviewButton(heroid){
     location.replace("login.html");
 }
