@@ -67,3 +67,14 @@ form {
   margin: 1px auto;
   padding: 10px;
 }
+.progress:before {
+    content:attr(data-text);
+    position:absolute;
+    left:0;
+    right:0;
+  }
+  .progress {
+   text-align:center;
+   display:inline-block;
+   position:relative;
+  }

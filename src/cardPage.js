@@ -40,7 +40,7 @@ export class cardPage extends React.Component {
          <p > {hero.hours}</p>
          <img src= {hero.img} alt="Hero Image"/>
               <form method="post">
-                  <span>Ratings:</span><progress class="progress is-info" value="50" max="100"></progress>
+                  <span>Ratings:</span><progress class="progress is-info" value="50" max="100" data-text="50%">30</progress>
                   <p class= "button is-primary is-centered" id = {hero.id}>
                       <input id="r1" type="radio" name="star" value="5"></input><label for="r1">1&#9733;</label>
                       <input id="r2" type="radio" name="star" value="4"></input><label for="r2">2&#9733;</label>
