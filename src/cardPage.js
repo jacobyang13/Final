@@ -179,8 +179,13 @@ handleSubmitReview = event =>{
     return (
       <div>
         <div>
-         
-          <div>You are a guest: <p>{this.state.guest === false ? <span>false</span> : <span>true</span>}</p></div>
+        <div className="card" >
+  <div className="card-body">
+    <h5 className="card-title">Card title</h5>
+    <div className = "card-text">{this.state.guest === false ? <span>You are a guest</span> : <span></span>}</div>
+  </div>
+</div>
+          
         </div>
         {this.renderHeroEditForm()}
         <div>
