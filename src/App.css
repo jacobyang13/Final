@@ -1,4 +1,7 @@
-
+#card{
+  background-color: darkmagenta;
+  color: darkmagenta;
+}
 .filter{
     background-color: rgb(241, 204, 179);
     max-width: 800px;
