@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import Autocomplete from './Autocomplete.js';
 //import heroes from './data.js'
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
 });
-
 export class cardPage extends React.Component {
   constructor(props) {
     super(props);
@@ -22,9 +22,8 @@ export class cardPage extends React.Component {
       kosher: false,
       nutAllergy: false,
       veganFriendly: false,
-      reviewRating: ''
-
-
+      reviewRating: 0,
+      avg: 0,
     };
 
   }
@@ -38,7 +37,29 @@ export class cardPage extends React.Component {
       })
     })
   }
-
+  getRatings = (ratings) =>{
+    var num = 0;
+    var den = ratings.length;
+    for(var i = 0; i < ratings.length; i++){
+      if(ratings[i] == 1){
+        num += 0;
+      }
+      else if(ratings[i] == 2){
+        num+= 25;
+      }
+      else if(ratings[i] == 3){
+        num+= 50;
+      }
+      else if(ratings[i] == 4){
+        num+= 75;
+      }
+      else if(ratings[i] == 5){
+        num+= 100;
+      }
+    }
+    var avg = num/den; 
+    this.setState({avg:avg});
+  }
   handleViewMap = () => {
     console.log("hi");
     return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
@@ -142,15 +163,16 @@ handleFilterChange  = event => {
             )
 };
 setReviewButton(event) {
-  
-  this.setState({reviewRating: event.target.value})
+  this.setState({reviewRating: parseInt(event.target.value,10)})
 }
 handleSubmitReview = event =>{
   event.preventDefault();
+  
   console.log(this.state.reviewRating)
   this.setState({
     ratings: this.state.ratings.concat(this.state.reviewRating)
   })
+  this.getRatings(this.state.ratings)
  console.log(this.state.ratings)
 }
   render() {
@@ -161,6 +183,24 @@ handleSubmitReview = event =>{
           <h1>You are a guest: </h1>
         </div>
         {this.renderHeroEditForm()}
+        <div>
+      <h1>React Autocomplete Demo</h1>
+      <h2>Start typing and experience the autocomplete wizardry!</h2>
+      <Autocomplete
+        suggestions={[
+          "Alligator",
+          "Bask",
+          "Crocodilian",
+          "Death Roll",
+          "Eggs",
+          "Jaws",
+          "Reptile",
+          "Solitary",
+          "Tail",
+          "Wetlands"
+        ]}
+      />
+    </div>
         {Object.keys(this.state.heroCards).map((key, id) => (
 
 
@@ -174,7 +214,7 @@ handleSubmitReview = event =>{
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
         <form>
-                  <span>Ratings:</span><progress className="progress is-info" value="50" max="100" data-text="50%">30</progress>
+                  <span>Ratings:</span><progress className="progress is-info" value={this.state.avg} max="100" data-text="100%">30</progress>
                   <p onChange={this.setReviewButton.bind(this)} className= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
           
                       <input id="r1" type="radio" name="star" value="1"></input><label htmlFor="r1">1&#9733;</label>
