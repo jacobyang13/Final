@@ -35,8 +35,13 @@
         "description": "New User"
       }
     },
+<<<<<<< HEAD
+    "jvanglish": {
+      "passwordHash": "$2b$10$65e5mjhE0BHFxcmunmIcQ.kX4Pek691lzlBV19R9AYJbZObJCZFMW",
+=======
     "jacob": {
       "passwordHash": "$2b$10$uCL0xls6Fqe76gUigxZ4MOra1qNoAr24AQHJAhU0sLgKeWetLgcp6",
+>>>>>>> 97064f30d32afa2876fa13954446a152f4bb7d33
       "data": {
         "role": 2,
         "description": "New User"
