@@ -28,8 +28,6 @@ export class cardPage extends React.Component {
 
   renderCards = () => {
   return (heroes.map((hero, id) => (
-
-
       <div>
       <div id = {hero.id}  className = "result" >
          
@@ -45,7 +43,7 @@ export class cardPage extends React.Component {
          
          <img src= {hero.img} alt="Hero Image"/>
               <form method="post">
-                  <p class="class">
+                  <p class= "stars" id = {hero.id}>
                       <input id="r1" type="radio" name="star" value="5"></input><label for="r1">&#9733;</label>
                       <input id="r2" type="radio" name="star" value="4"></input><label for="r2">&#9733;</label>
                       <input id="r3" type="radio" name="star" value="3"></input><label for="r3">&#9733;</label>
@@ -53,9 +51,9 @@ export class cardPage extends React.Component {
                       <input id="r5" type="radio" name="star" value="1"></input><label for="r5">&#9733;</label>
                   </p>
                   <p>
-                      <input type={hero.id} value="Submit Review" name="submit" />
+                      <button type={hero.id} value="Submit Review" name="submit">Submit Review</button>
                   </p>
-                </form>
+                </form>    
      </div>
      </div>
              
