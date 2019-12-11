@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import Autocomplete from './Autocomplete.js';
 //import heroes from './data.js'
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
@@ -144,6 +145,24 @@ handleSubmitReview = event =>{
           <h1>You are a guest: </h1>
         </div>
         {this.renderHeroEditForm()}
+        <div>
+      <h1>React Autocomplete Demo</h1>
+      <h2>Start typing and experience the autocomplete wizardry!</h2>
+      <Autocomplete
+        suggestions={[
+          "Alligator",
+          "Bask",
+          "Crocodilian",
+          "Death Roll",
+          "Eggs",
+          "Jaws",
+          "Reptile",
+          "Solitary",
+          "Tail",
+          "Wetlands"
+        ]}
+      />
+    </div>
         {Object.keys(this.state.heroCards).map((key, id) => (
 
 
