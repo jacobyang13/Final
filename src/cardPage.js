@@ -17,10 +17,13 @@ export class cardPage extends React.Component {
       heroCards: {},
       defaultHeroCards: {},
       filterCards:{},
+      ratings :[],
       gf: false,
       kosher: false,
       nutAllergy: false,
-      veganFriendly: false
+      veganFriendly: false,
+      reviewRating: ''
+
 
     };
 
@@ -121,7 +124,18 @@ handleFilterChange  = event => {
     </div>
             )
 };
-
+setReviewButton(event) {
+  
+  this.setState({reviewRating: event.target.value})
+}
+handleSubmitReview = event =>{
+  event.preventDefault();
+  console.log(this.state.reviewRating)
+  this.setState({
+    ratings: this.state.ratings.concat(this.state.reviewRating)
+  })
+ console.log(this.state.ratings)
+}
   render() {
     return (
       <div>
@@ -142,8 +156,21 @@ handleFilterChange  = event => {
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
-  
-
+        <form>
+                  <span>Ratings:</span><progress className="progress is-info" value="50" max="100" data-text="50%">30</progress>
+                  <p onChange={this.setReviewButton.bind(this)} className= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
+          
+                      <input id="r1" type="radio" name="star" value="1"></input><label htmlFor="r1">1&#9733;</label>
+                      <input id="r2" type="radio" name="star" value="2"></input><label htmlFor="r2">2&#9733;</label>
+                      <input id="r3" type="radio" name="star" value="3"></input><label htmlFor="r3">3&#9733;</label>
+                      <input id="r4" type="radio" name="star" value="4"></input><label htmlFor="r4">4&#9733;</label>
+                      <input id="r5" type="radio" name="star" value="5"></input><label htmlFor="r5">5&#9733;</label><br></br>
+                  
+                  </p>
+                      <div className ="buttons is-centered">
+                        <button onClick={this.handleSubmitReview} className = "button is-link is-centered" type={this.state.heroCards[key].id} value="Submit Review" name="submit">Submit Review</button>
+                      </div>
+              </form>   
 </div>
 </div>
        
