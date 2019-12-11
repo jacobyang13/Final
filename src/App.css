@@ -15,7 +15,7 @@
   background-color: rgba(7, 168, 243, 0.664);
 }
 .filter{
-    background-color: rgb(241, 204, 179);
+    background-color: rgba(241, 204, 179, 0.671);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -31,13 +31,13 @@
 .result {
     max-width: 100px;
     max-height: 100px;
-    /* margin-left: auto;  */
-    /* margin-right: auto; */
+    margin-left: auto; 
+    margin-right: auto;
     padding: 2em 1em;
     border-radius: 8px;
     /* overflow: hidden; */
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
-    background-color: rgba(160, 81, 160, 0.521);
+    background-color: rgba(218, 194, 218, 0.842);
   }
 
   #criteria{
