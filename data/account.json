@@ -20,6 +20,20 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "newaccount": {
+      "passwordHash": "$2b$10$gHsJh2CR7EYz.32W6ciglOcxUdavg0lKLfkAEujYD/YE1JTewbM6e",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "newcouunt2": {
+      "passwordHash": "$2b$10$5AJEJmiN46qXeSVPpno1sus7hhquKmz/XveB4PE1D1/9bauPLaq6S",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }

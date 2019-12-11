@@ -1,7 +1,32 @@
 {
-  "examplePost": {
-    "authors": {
-      "first": "Jacob"
-    }
+  "restaurants":{
+    "hibachi":{
+      "id": 0,
+      "name": "Hibachi & Co",
+      "address": "155 E Franklin St, Chapel Hill, NC 27514",
+      "hours": "11AM-10PM",
+      "img": "r_icons/hibachi.png",
+      "color": "black",
+      "backgroundColor": "#E13C28",
+      "kosher_options": false,
+      "gf": true,
+      "nut_friendly": true,
+      "vegan": false
+    } ,
+    "moes": {
+      "id": 1,
+      "name": "Moe's Southwest Grill",
+      "address": "110 W Franklin St, Chapel Hill, NC 27516",
+      "hours": "11AM-10PM",
+      "img": "r_icons/moes.png",
+      "color": "black",
+      "backgroundColor": "#B4F9BB",
+      "kosher_options": false,
+      "gf": false,  
+      "nut_friendly": true,
+      "vegan": false
   }
+  }
+
+ 
 }
