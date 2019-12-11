@@ -23,11 +23,7 @@ export class MainApp extends React.Component {
 
   }
   componentDidMount = () => {
-    pubRoot.get('/examplePost/authors')
-      .then(res => {
-        const persons = res.data.result.first;
-        this.setState({ person: persons });
-      })
+  
      
   }
   handleChange = event => {
@@ -90,6 +86,21 @@ export class MainApp extends React.Component {
       })
       
   }
+  handleContinueAsGuest = event => {
+    
+    this.setState({
+      start: 200
+    })
+    this.renderPage();
+  }
+
+  handleLogOut = event => {
+    alert("yo");
+    this.setState({
+      start: 0
+    })
+  }
+
   handleSubmit2 = event => {
     event.preventDefault();
 
@@ -109,7 +120,7 @@ export class MainApp extends React.Component {
   renderStart(){
     
     return (
-      <div className = "card">
+      <div className = "start">
         
         <main>
         <div className = "card-body">
@@ -127,6 +138,7 @@ export class MainApp extends React.Component {
         </form>
         <br></br>
         <form onSubmit={this.handleCreateNew}>
+        <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
           <label>
              Login:
             <input type="text" name="Login" onChange={this.handleChangeLogin} />
@@ -146,7 +158,7 @@ export class MainApp extends React.Component {
   renderPage() {
     return (
       <div>
-          <Nav/>
+          <Nav className = "nav"/>
        <main>
        <CardPage/>
         {/* <form onSubmit={this.handleSubmit}>
@@ -177,6 +189,8 @@ export class MainApp extends React.Component {
           : this.renderPage()}
       </div>
     )
+
+    // this.on('click', '.log-out', handleLogOut);
   }
   
 }
