@@ -17,10 +17,10 @@ function Nav() {
         <a className="nav-link" href="#">Features</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="">Pricing</a>
+        <a className="nav-link" href="#">Pricing</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Log Out</a>
+        <a className="nav-link" id="log-out" href="#" >Log Out!</a>
       </li>
       {/* <li className="nav-item">
         <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>

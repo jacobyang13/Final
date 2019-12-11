@@ -91,12 +91,18 @@ export class MainApp extends React.Component {
       
   }
   handleContinueAsGuest = event => {
-    // alert("hi");
-    // event.preventDefault();
+    
     this.setState({
       start: 200
     })
-    // this.renderPage();
+    this.renderPage();
+  }
+
+  handleLogOut = event => {
+    alert("yo");
+    this.setState({
+      start: 0
+    })
   }
 
   handleSubmit2 = event => {
@@ -187,6 +193,8 @@ export class MainApp extends React.Component {
           : this.renderPage()}
       </div>
     )
+
+    // this.on('click', '.log-out', handleLogOut);
   }
   
 }
