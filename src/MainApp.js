@@ -36,10 +36,8 @@ export class MainApp extends React.Component {
   handleChangePassword = event => {
     this.setState({ password: event.target.value });
   }
-
   handleSubmitLogin = event => {
     event.preventDefault();
-
 
     accountRoot.post('/login', {
       "name": this.state.login,
@@ -53,12 +51,12 @@ export class MainApp extends React.Component {
         }
         console.log(res);
         console.log(res.data);
+        // accountRoot.append("NEW ACCOUNT CREATED");
       })
       
   }
   handleCreateNew = event => {
     event.preventDefault();
-
 
     accountRoot.post('/create', {
       "name": this.state.login,
@@ -78,9 +76,7 @@ export class MainApp extends React.Component {
     event.preventDefault();
 
     const data = {
-  
        "authors":{"first": this.state.name}
-        
     };
 
     pubRoot.post('/examplePost', { data })
@@ -90,13 +86,26 @@ export class MainApp extends React.Component {
       })
       
   }
+  handleContinueAsGuest = event => {
+    
+    this.setState({
+      start: 200
+    })
+    this.renderPage();
+  }
+
+  handleLogOut = event => {
+    alert("yo");
+    this.setState({
+      start: 0
+    })
+  }
+
   handleSubmit2 = event => {
     event.preventDefault();
 
     const data = {
-  
        "authors":{"first": this.state.name}
-        
     };
 
     pubRoot.get('/examplePost/authors', { data })
@@ -111,7 +120,7 @@ export class MainApp extends React.Component {
   renderStart(){
     
     return (
-      <div className = "card">
+      <div className = "start">
         
         <main>
         <div className = "card-body">
@@ -120,13 +129,16 @@ export class MainApp extends React.Component {
              Login:
             <input type="text" name="Login" onChange={this.handleChangeLogin} />
           </label>
+          
           <label>
             Password:
             <input type="text" name="Password" onChange={this.handleChangePassword} />
           </label>
           <button type="submit">Submit</button>
         </form>
+        <br></br>
         <form onSubmit={this.handleCreateNew}>
+        <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
           <label>
              Login:
             <input type="text" name="Login" onChange={this.handleChangeLogin} />
@@ -146,9 +158,7 @@ export class MainApp extends React.Component {
   renderPage() {
     return (
       <div>
-          <Nav/>
-     
-       
+          <Nav className = "nav"/>
        <main>
        <CardPage/>
         {/* <form onSubmit={this.handleSubmit}>
@@ -179,6 +189,8 @@ export class MainApp extends React.Component {
           : this.renderPage()}
       </div>
     )
+
+    // this.on('click', '.log-out', handleLogOut);
   }
   
 }

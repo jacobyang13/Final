@@ -104,7 +104,6 @@
   
   /* } */
   
-  
   .regular-checkbox:checked + label:after {
     content: '\2714';
     font-size: 11px;
