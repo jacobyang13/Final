@@ -109,7 +109,7 @@ export class MainApp extends React.Component {
   renderStart(){
     
     return (
-      <div className = "card">
+      <div className = "start">
         
         <main>
         <div className = "card-body">
@@ -146,7 +146,7 @@ export class MainApp extends React.Component {
   renderPage() {
     return (
       <div>
-          <Nav/>
+          <Nav className = "nav"/>
        <main>
        <CardPage/>
         {/* <form onSubmit={this.handleSubmit}>
