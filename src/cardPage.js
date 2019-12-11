@@ -36,7 +36,8 @@ export class cardPage extends React.Component {
   }
 
   handleViewMap = () => {
-    return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=..." allowfullscreen></iframe>)
+    console.log("hi");
+    return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
   }
 
   handleGfChange = event => 
