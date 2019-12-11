@@ -1,36 +1,7 @@
 let updated_data = heroicData;
 /////onclick="location.href = 'reviews.js'
 ///onclick = "handleReviewButton("${hero.id}")"
-export const renderHeroCard = function (hero) {
-    return `
-    <div id ="${hero.id}" class = "result"  style="background-color:${hero.backgroundColor}; width: 40%;">
-        
-            <h class = "title" style="color:black; font-weight:bold">${hero.name}</h>
-            <br>
-            <h class = "subtitle" style = "color: blue;">${hero.address}</h>
-            <p style = "color: white;"> ${hero.hours}</p>
-            
-            <img src=${hero.img} alt="Hero Image">
-            <button editween="${hero.id}" class = "review" id = "${hero.id}" type="button" onclick="location.href = 'login.html'";
-            style="background-color: white; font-size: 20px; border: 1px solid black; color: ${hero.color}; border-radius: 20%;";>Reviews</button>
-            
-            <!-- stars -->
-                    <form action="" method="post">
-                      <p class="clasificacion">
-                         <input id="r1" type="radio" name="estrellas" value="5"><label for="r1">&#9733;</label>
-                         <input id="r2" type="radio" name="estrellas" value="4"><label for="r2">&#9733;</label>
-                         <input id="r3" type="radio" name="estrellas" value="3"><label for="r3">&#9733;</label>
-                         <input id="r4" type="radio" name="estrellas" value="2"><label for="r4">&#9733;</label>
-                         <input id="r5" type="radio" name="estrellas" value="1"><label for="r5">&#9733;</label>
-                      </p>
-                      <p>
-                        <input type="submit" value="submit" name="submit" />
-                      </p>
-                    </form>
-        </div>
-        `
-        ;
-};
+
 
 function handleReviewButton(heroid){
     location.replace("login.html");

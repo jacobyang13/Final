@@ -41,10 +41,7 @@ export class cardPage extends React.Component {
 
   )));
   }
-  renderHeroCard = (hero) => {
 
-    
-};
  
   renderHeroEditForm = () => {
 
@@ -68,6 +65,7 @@ export class cardPage extends React.Component {
   render() {
     return (
       <div>
+        {this.renderHeroEditForm()}
         {this.renderCards()}
       </div>
     )
