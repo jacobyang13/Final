@@ -1,2 +1,7 @@
 {
+  "examplePost": {
+    "authors": {
+      "first": "Jacob"
+    }
+  }
 }

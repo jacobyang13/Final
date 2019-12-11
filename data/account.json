@@ -1,2 +1,39 @@
 {
+  "users": {
+    "chris": {
+      "passwordHash": "$2b$10$/z9J.4nUcTGnb2.QnPQiR.S6ij.XT.vkhdmO3M.fiAhWE8rwAdwmG",
+      "data": {
+        "role": 2,
+        "description": "Lazy..."
+      }
+    },
+    "jyy": {
+      "passwordHash": "$2b$10$1557VOYHlQmjJ4s2UymJMuT2VKn/UWtUrFNdlcHNymjuMUq/TyFd.",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "fiji": {
+      "passwordHash": "$2b$10$HusudItXodKdUIf92goO/uy1PX5tERFwTuh5wFs9Dcj4mAxDzTkOW",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "noah": {
+      "passwordHash": "$2b$10$tYkhcJpQO1nDq2B0GziHNOz46RA7kdJaIRlksvNLDTOQTtK64p8Vq",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "d": {
+      "passwordHash": "$2b$10$fUqJi0dkyox7N30bTq1zGudcm6DtodXGyGGFhQpRtKfbIt.XWbpOe",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    }
+  }
 }
