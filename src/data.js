@@ -1,20 +1,9 @@
-/**
- * Course: COMP 426
- * Assignment: a05
- *
- * This file defines data to be rendered to the page.
- */
-
-
-/**
- * Represents a list of heroic users
- */
 const heroicData = [{
     id: 0,
     name: "Hibachi & Co",
     address: "155 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
-    img: "r_icons/hibachi.png",
+    img: require("./r_icons/hibachi.png"),
     color: "black",
     backgroundColor: "#E13C28",
     kosher_options: false,
@@ -26,7 +15,7 @@ const heroicData = [{
     name: "Moe's Southwest Grill",
     address: "110 W Franklin St, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
-    img: "r_icons/moes.png",
+    img: require("./r_icons/moes.png"),
     color: "black",
     backgroundColor: "#B4F9BB",
     kosher_options: false,
@@ -38,7 +27,7 @@ const heroicData = [{
     name: "Chipotle Mexican Grill",
     address: "301 W Franklin St, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
-    img: "r_icons/chipoltle.png",
+    img: require("./r_icons/chipoltle.png"),
     color: "black",
     backgroundColor: "#F9B4B4",
     kosher_options: true,
@@ -50,7 +39,7 @@ const heroicData = [{
     name: "The Pizza Press",
     address: "133 W Franklin St Suite 120 Suite 120, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
-    img: "r_icons/pizzapress.png",
+    img: require("./r_icons/pizzapress.png"),
     color: "black",
     backgroundColor: "#DED9D7",
     kosher_options: false,
@@ -62,7 +51,7 @@ const heroicData = [{
     name: "Bandito's Mexican Cafe",
     address: "159 1/2 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
-    img: "r_icons/banditos.jpg",
+    img: require("./r_icons/banditos.jpg"),
     color: "black",
     backgroundColor: "#F8F9B4",
     kosher_options: false,
@@ -74,7 +63,7 @@ const heroicData = [{
     name: "Ms. Mong",
     address: "163 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
-    img: "r_icons/mong.png",
+    img: require("./r_icons/mong.png"),
     color: "black",
     backgroundColor: "#B8B4F9",
     kosher_options: false,
@@ -86,7 +75,7 @@ const heroicData = [{
     name: "Sutton's Drug Store",
     address: "159 E Franklin St, Chapel Hill, NC 27514",
     hours: "11AM-10PM",
-    img: "r_icons/suttons.jpg",
+    img:require("./r_icons/suttons.jpg"),
     color: "black",
     backgroundColor: "#E2B4F9",
     kosher_options: false,
@@ -98,7 +87,7 @@ const heroicData = [{
     name: "Panera Bread",
     address: "213 W Franklin St, Chapel Hill, NC 27516",
     hours: "11AM-10PM",
-    img: "r_icons/panera.png",
+    img:require("./r_icons/panera.png"),
     color: "black",
     backgroundColor: "#F9D9B4 ",
     kosher_options: true,
@@ -110,7 +99,7 @@ const heroicData = [{
     name: "Chabad House",
     address: "Somewhere on Malette St.",
     hours: "11AM-10PM",
-    img: "r_icons/chabad.jpg",
+    img: require("./r_icons/chabad.jpg"),
     color: "black",
     backgroundColor: "#B4E6F9",
     kosher_options: true,

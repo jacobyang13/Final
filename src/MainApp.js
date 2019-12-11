@@ -124,12 +124,14 @@ export class MainApp extends React.Component {
              Login:
             <input type="text" name="Login" onChange={this.handleChangeLogin} />
           </label>
+          
           <label>
             Password:
             <input type="text" name="Password" onChange={this.handleChangePassword} />
           </label>
           <button type="submit">Submit</button>
         </form>
+        <br></br>
         <form onSubmit={this.handleCreateNew}>
           <label>
              Login:
@@ -151,12 +153,10 @@ export class MainApp extends React.Component {
     return (
       <div>
           <Nav/>
-       <h1>
-         YOU LOGGED IN!
-         <CardPage/>
-       </h1>
+     
+       
        <main>
-   
+       <CardPage/>
         {/* <form onSubmit={this.handleSubmit}>
           <label>
             Person Name:
