@@ -14,7 +14,7 @@ export class MainApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      guest: false,
+      guest: true,
       name: "",
       person:[],
       login: '',
@@ -50,16 +50,15 @@ export class MainApp extends React.Component {
         if(res.status === 200){
           alert("Succesfully Logged In!");
           this.setState({
-            start: 200
+            start: 200,
+            guest: false
           })
-        } else { console.log("FAIL!"); alert("login failed");}
-        // if(res.status.data === 401){
-        //   alert("Failed");
-        // } 
+        } 
         console.log(res);
         console.log(res.data);
- 
+       
       })
+      .catch(err => {if(err.status !== 200) { console.log("FAIL!"); alert("Wrong Username or Password");}});
 
       
       // alert("Username or Password Not Recognized");
@@ -172,9 +171,9 @@ export class MainApp extends React.Component {
           </label>
           <button type="submit">Login</button>
         </form>
-        <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
+        <p>Continue as Guest? Click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
         <br></br>
-        <p>OR, <a href="#" onClick={this.changeNewAccountState}>Create A New Account</a></p>
+        <p>Or <a href="#" onClick={this.changeNewAccountState}>Create A New Account</a></p>
 
 
       </div>

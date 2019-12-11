@@ -10,7 +10,7 @@ export class cardPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      guest: false,
+      guest: true,
       name: "",
       person:[],
       login: '0',
@@ -140,8 +140,8 @@ handleSubmitReview = event =>{
     return (
       <div>
         <div>
-          <p>{this.state.guest}</p>
-          <h1>You are a guest: </h1>
+         
+          <p>You are a guest: <p>{this.state.guest === false ? <p>false</p> : <p>true</p>}</p></p>
         </div>
         {this.renderHeroEditForm()}
         {Object.keys(this.state.heroCards).map((key, id) => (
