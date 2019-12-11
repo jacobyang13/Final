@@ -7,6 +7,13 @@
   height: 100vh;
   background: #F7F7F7;
 }
+#home{
+  color: red;
+}
+.navbar{
+  color: red;
+  background-color: rgba(7, 168, 243, 0.664);
+}
 .filter{
     background-color: rgb(241, 204, 179);
     max-width: 800px;
