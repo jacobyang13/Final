@@ -38,6 +38,7 @@ export class cardPage extends React.Component {
      </div>
      </div>
              
+    
 
   )));
   }
