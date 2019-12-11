@@ -13,6 +13,13 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "jvanglish": {
+      "passwordHash": "$2b$10$EgcUjK7iuqgRlPh5EigAgOqc5R20fYCJyvc.yO3PquzVBkAYkfM9i",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }
