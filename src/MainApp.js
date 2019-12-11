@@ -151,12 +151,10 @@ export class MainApp extends React.Component {
     return (
       <div>
           <Nav/>
-       <h1>
-         YOU LOGGED IN!
-         <CardPage/>
-       </h1>
+     
+       
        <main>
-   
+       <CardPage/>
         {/* <form onSubmit={this.handleSubmit}>
           <label>
             Person Name:
