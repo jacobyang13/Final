@@ -2,15 +2,25 @@
   color: navy;
   font-size: 5vh;
   font-style: oblique;
-  font-family: fantasy;
+  /* font-family: fantasy; */
 }
 .card-body{
   outline: black;
   outline-width: 5px;
 }
+.fullWidth{
+  width: 100%
+}
 #moveDown{
-  margin-top:1vh;
+  margin-top:1.3vh;
   color:white;
+}
+#center{
+  text-align: center;
+}
+.center{
+  margin-left: 40vw;
+  font-size: 25px;
 }
 .return{
   align-content: center;
@@ -42,7 +52,8 @@
 }
 .filter{
     background-color: rgba(241, 204, 179, 0.671);
-    max-width: 800px;
+    
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 2em 1em; 
@@ -76,7 +87,7 @@
   }
   
   .result {
-    max-width: 1000px;
+    max-width: 100%;
     max-height: 2000px;
     margin-left: auto;
     margin-right: auto;

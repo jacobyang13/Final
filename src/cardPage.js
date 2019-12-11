@@ -131,7 +131,7 @@ handleFilterChange  = event => {
   renderHeroEditForm = () => {
 
     return (
-     <div>
+     <div className = "fullWidth">
 
        {/* <div class="field" id="searchbar">
         <div class ="control">
@@ -150,14 +150,15 @@ handleFilterChange  = event => {
        
        
      <div className="filter">
-
-<span className = "title">Filter Options</span> <br/>
+<div className = "center">
+<span >Filter Options</span> <br/>
 
 <input id = "gf" type="checkbox" checked={this.state.gf} onChange={this.handleGfChange} />Gluten Free Options<br/>
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
 <input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
+</div>
         </div>
     </div>
             )
@@ -181,8 +182,9 @@ handleSubmitReview = event =>{
         <div>
         <div className="card" >
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <div className = "card-text">{this.state.guest === false ? <span>You are a guest</span> : <span></span>}</div>
+    <div className = "card-text"> <h1 id = "center">{this.state.guest === true ? <span>You are a guest, please login
+      to gain full access
+    </span> : <span>You are logged in</span>}</h1></div>
   </div>
 </div>
           
