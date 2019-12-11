@@ -13,6 +13,13 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "jacob": {
+      "passwordHash": "$2b$10$Gz/XrurTCqH1Jq7J3rhFxOKpq2vmWz80biovYWdntINe0q9u7Yoka",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }

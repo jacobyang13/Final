@@ -28,11 +28,8 @@ export class cardPage extends React.Component {
 
   renderCards = () => {
   return (heroes.map((hero, id) => (
-
-
       <div>
       <div id = {hero.id}  className = "result" >
-         
          <h1 className = "title" >{hero.name}</h1>
          <br/>
          <h1 className = "subtitle" >{hero.address} 
@@ -40,22 +37,21 @@ export class cardPage extends React.Component {
             <button type="submit">View Map</button>
           </form>
         </h1>
-         
          <p > {hero.hours}</p>
-         
          <img src= {hero.img} alt="Hero Image"/>
               <form method="post">
-                  <p class="class">
-                      <input id="r1" type="radio" name="star" value="5"></input><label for="r1">&#9733;</label>
-                      <input id="r2" type="radio" name="star" value="4"></input><label for="r2">&#9733;</label>
-                      <input id="r3" type="radio" name="star" value="3"></input><label for="r3">&#9733;</label>
-                      <input id="r4" type="radio" name="star" value="2"></input><label for="r4">&#9733;</label>
-                      <input id="r5" type="radio" name="star" value="1"></input><label for="r5">&#9733;</label>
-                  </p>
-                  <p>
-                      <input type={hero.id} value="Submit Review" name="submit" />
-                  </p>
-                </form>
+                  <span>Ratings:</span><progress class="progress is-info" value="50" max="100" data-text="50%">30</progress>
+                  <p class= "button is-primary is-centered" id = {hero.id}>
+                      <input id="r1" type="radio" name="star" value="5"></input><label for="r1">1&#9733;</label>
+                      <input id="r2" type="radio" name="star" value="4"></input><label for="r2">2&#9733;</label>
+                      <input id="r3" type="radio" name="star" value="3"></input><label for="r3">3&#9733;</label>
+                      <input id="r4" type="radio" name="star" value="2"></input><label for="r4">4&#9733;</label>
+                      <input id="r5" type="radio" name="star" value="1"></input><label for="r5">5&#9733;</label><br></br>
+                      </p>
+                      <div class ="buttons is-centered">
+                        <button class = "button is-link is-centered" type={hero.id} value="Submit Review" name="submit">Submit Review</button>
+                      </div>
+              </form>    
      </div>
      </div>
              
