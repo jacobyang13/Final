@@ -1,10 +1,12 @@
 {
     "restaurants":{
       "hibachi":{
-        "reviews": []
+        "reviews": [],
+        "rating": []
       } ,
       "moes": {
-       "reviews": []
+       "reviews": [],
+       "rating": []
     }
     }
   

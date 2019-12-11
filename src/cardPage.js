@@ -10,6 +10,7 @@ export class cardPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      guest: false,
       name: "",
       person:[],
       login: '0',
@@ -35,7 +36,6 @@ export class cardPage extends React.Component {
   }
 
   handleViewMap = () => {
-    console.log("hi");
     return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=..." allowfullscreen></iframe>)
   }
 
@@ -133,12 +133,11 @@ handleFilterChange  = event => {
    
    <h1 className = "title" >{this.state.heroCards[key].name}</h1>
    <br/>
-   {this.handleViewMap()}
    <h1 className = "subtitle" >{this.state.heroCards[key].address}</h1>
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
-   <form >
+   <form onSubmit>
                   <span>Ratings:</span><progress class="progress is-info" value="50" max="100" data-text="50%">30</progress>
                   <p class= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
                       <input id="r1" type="radio" name="star" value="5"></input><label for="r1">1&#9733;</label>
