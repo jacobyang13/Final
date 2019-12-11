@@ -228,7 +228,7 @@ export class MainApp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.start ===1
+        {this.state.start ===0
           ? this.renderStart()
           : this.renderPage()}
       </div>
