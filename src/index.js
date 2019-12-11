@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import MainApp from './MainApp';
+// import Nav from './Nav'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

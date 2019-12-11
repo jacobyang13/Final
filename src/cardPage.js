@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import Autocomplete from './Autocomplete.js';
 //import heroes from './data.js'
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
@@ -9,7 +10,7 @@ export class cardPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      guest: false,
+      guest: true,
       name: "",
       person:[],
       login: '0',
@@ -131,6 +132,23 @@ handleFilterChange  = event => {
 
     return (
      <div>
+
+       {/* <div class="field" id="searchbar">
+        <div class ="control">
+        <input class="input is-primary" type="text" placeholder="Search For Restaurants Here"></input>
+        </div>
+       </div>
+
+<form autocomplete="off" action="/action_page.php">
+  <div class="autocomplete">
+    <input id="myInput" type="text" name="myCountry" placeholder="Country"></input>
+  </div>
+  <input type="submit"></input>
+</form> */}
+
+
+       
+       
      <div className="filter">
 
 <span className = "title">Filter Options</span> <br/>
@@ -161,10 +179,33 @@ handleSubmitReview = event =>{
     return (
       <div>
         <div>
-          <p>{this.state.guest}</p>
-          <h1>You are a guest: </h1>
+        <div className="card" >
+  <div className="card-body">
+    <h5 className="card-title">Card title</h5>
+    <div className = "card-text">{this.state.guest === false ? <span>You are a guest</span> : <span></span>}</div>
+  </div>
+</div>
+          
         </div>
         {this.renderHeroEditForm()}
+        <div>
+      <h1>React Autocomplete Demo</h1>
+      <h2>Start typing and experience the autocomplete wizardry!</h2>
+      <Autocomplete
+        suggestions={[
+          "Alligator",
+          "Bask",
+          "Crocodilian",
+          "Death Roll",
+          "Eggs",
+          "Jaws",
+          "Reptile",
+          "Solitary",
+          "Tail",
+          "Wetlands"
+        ]}
+      />
+    </div>
         {Object.keys(this.state.heroCards).map((key, id) => (
 
 

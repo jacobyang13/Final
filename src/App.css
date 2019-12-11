@@ -8,17 +8,25 @@
   outline: black;
   outline-width: 5px;
 }
+#moveDown{
+  margin-top:1vh;
+  color:white;
+}
 .return{
   align-content: center;
-  margin-left: 115px;
+  margin-left: 110px;
   /* justify-content: center; */
   color: red;
   /* background-color: palegreen; */
   
 }
+.button{
+  margin-left: 20px;
+}
+
 .start{
   background-color: rgb(243, 247, 246);
-  color: rgb(0, 65, 139);
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,11 +34,11 @@
   background: #F7F7F7;
 }
 #home{
-  color: red;
+  color: white;
 }
 .navbar{
-  color: red;
-  background-color: rgba(7, 168, 243, 0.664);
+  color: white;
+  background-color: black;
 }
 .filter{
     background-color: rgba(241, 204, 179, 0.671);

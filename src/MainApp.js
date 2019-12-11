@@ -3,6 +3,8 @@ import './App.css';
 import Nav from './Nav.jsx'
 import axios from 'axios';
 import CardPage from './cardPage.js'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
 });
@@ -14,7 +16,7 @@ export class MainApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      guest: false,
+      guest: true,
       name: "",
       person:[],
       login: '',
@@ -50,16 +52,15 @@ export class MainApp extends React.Component {
         if(res.status === 200){
           alert("Succesfully Logged In!");
           this.setState({
-            start: 200
+            start: 200,
+            guest: false
           })
-        } else { console.log("FAIL!"); alert("login failed");}
-        // if(res.status.data === 401){
-        //   alert("Failed");
-        // } 
+        } 
         console.log(res);
         console.log(res.data);
- 
+       
       })
+      .catch(err => {if(err.status !== 200) { console.log("FAIL!"); alert("Wrong Username or Password");}});
 
       
       // alert("Username or Password Not Recognized");
@@ -148,7 +149,7 @@ export class MainApp extends React.Component {
       <strong>Password:</strong>
         <input type="text" name="Password" onChange={this.handleChangePassword} />
       </label>
-      <button type="submit">Create New User</button>
+      <button class ="button is-success is-light" type="submit">Create New User</button>
     </form>
     </div>
     )
@@ -157,8 +158,8 @@ export class MainApp extends React.Component {
     // return (<h className = "regHead">Welcome,<br></br>Please Log In Here</h>);
     return (
       // <div><h className = "regHead">Welcome,<br></br>Please Log In Here</h></div>
-      <div className = "start">
-        <h className = "regHead">Welcome,<br></br>Please Log In Here</h>
+      <div className = "">
+        <h1 className = "regHead">Welcome,<br></br>Please Log In Here</h1>
         <div>
         <div className = "card-body">
         <form onSubmit={this.handleSubmitLogin}>
@@ -171,11 +172,11 @@ export class MainApp extends React.Component {
           <strong>Password:</strong>
             <input type="text" name="Password" onChange={this.handleChangePassword} />
           </label>
-          <button type="submit">Login</button>
+          <button class ="button is-success is-center" type="submit">Login</button>
         </form>
-        <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
+        <p>Continue as Guest? Click <a  onClick={this.handleContinueAsGuest}>Here</a></p>
         <br></br>
-        <p>OR, <a href="#" onClick={this.changeNewAccountState}>Create A New Account</a></p>
+        <p>Or <a href="#" onClick={this.changeNewAccountState}>Create A New Account</a></p>
 
 
       </div>
@@ -188,7 +189,6 @@ export class MainApp extends React.Component {
     
     return (
       <div className = "start">
-
          <div>
         {this.state.newAccount === false
           ? this.renderLogin()
@@ -203,25 +203,18 @@ export class MainApp extends React.Component {
   renderPage() {
     return (
       <div>
-          <Nav className = "nav"/>
+         <BrowserRouter>
+              <div>
+                <Route component={Nav}></Route>
+
+                <Switch>
+                  <Route exact path='/' exact render={(props) => (<CardPage guest = {this.state.guest}/>)}/>
+
+                </Switch>
+              </div>
+            </BrowserRouter>
        <main>
-       <CardPage guest = {this.state.guest}/>
-        {/* <form onSubmit={this.handleSubmit}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
-        <form onSubmit={this.handleSubmit2}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
-      </div>
-          <h1>{this.state.person}</h1> */}
+
         </main>
       </div>
     )

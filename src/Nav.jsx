@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
+import MainApp from './MainApp.js'
+import { Link,Router,Route } from "react-router-dom";
 
 function Nav() {
   return (
     <div className="nb">
      <nav  className="navbar navbar-expand-lg">
-  <a className="navbar-brand" href="#">COMP 426</a>
+  <a  id = "moveDown" className="navbar-brand" href="#">COMP 426</a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -14,15 +16,7 @@ function Nav() {
       <li className="nav-item active">
         <a id= "home" className="nav-link" tabIndex="1" href="#">Home <span className="sr-only">(current)</span></a>
       </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Card Page</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Pricing</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" id="log-out" href="#" >Log Out!</a>
-      </li>
+  
       {/* <li className="nav-item">
         <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
       </li> */}
