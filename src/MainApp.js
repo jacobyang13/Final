@@ -194,7 +194,7 @@ export class MainApp extends React.Component {
       <div>
           <Nav className = "nav"/>
        <main>
-       <CardPage/>
+       <CardPage />
         {/* <form onSubmit={this.handleSubmit}>
           <label>
             Person Name:
