@@ -20,6 +20,13 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "jyy": {
+      "passwordHash": "$2b$10$Uvvd4uLdMCTCZ5/LsEG/SeNtJtyotPwN7v8T.mWyHJifdoJUt2S8G",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }
