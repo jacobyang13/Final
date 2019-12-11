@@ -20,6 +20,12 @@ export class cardPage extends React.Component {
   componentDidMount = () => {
      
   }
+
+  handleViewMap = () => {
+    console.log("hi");
+    return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=..." allowfullscreen></iframe>)
+  }
+
   renderCards = () => {
   return (heroes.map((hero, id) => (
 
@@ -29,7 +35,12 @@ export class cardPage extends React.Component {
          
          <h1 className = "title" >{hero.name}</h1>
          <br/>
-         <h1 className = "subtitle" >{hero.address}</h1>
+         <h1 className = "subtitle" >{hero.address} 
+          <form onSubmit={this.handleViewMap}>
+            <button type="submit">View Map</button>
+          </form>
+        </h1>
+         
          <p > {hero.hours}</p>
          
          <img src= {hero.img} alt="Hero Image"/>
