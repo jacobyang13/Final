@@ -90,6 +90,15 @@ export class MainApp extends React.Component {
       })
       
   }
+  handleContinueAsGuest = event => {
+    // alert("hi");
+    // event.preventDefault();
+    this.setState({
+      start: 200
+    })
+    // this.renderPage();
+  }
+
   handleSubmit2 = event => {
     event.preventDefault();
 
@@ -127,6 +136,7 @@ export class MainApp extends React.Component {
         </form>
         <br></br>
         <form onSubmit={this.handleCreateNew}>
+        <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
           <label>
              Login:
             <input type="text" name="Login" onChange={this.handleChangeLogin} />
