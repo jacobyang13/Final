@@ -38,6 +38,7 @@ export class MainApp extends React.Component {
   handleChangePassword = event => {
     this.setState({ password: event.target.value });
   }
+  
   handleSubmitLogin = event => {
     event.preventDefault();
 
@@ -47,14 +48,21 @@ export class MainApp extends React.Component {
     })
       .then(res => {
         if(res.status === 200){
+          alert("Succesfully Logged In!");
           this.setState({
             start: 200
           })
-        }
+        } else { console.log("FAIL!"); alert("login failed");}
+        // if(res.status.data === 401){
+        //   alert("Failed");
+        // } 
         console.log(res);
         console.log(res.data);
-        // accountRoot.append("NEW ACCOUNT CREATED");
+ 
       })
+
+      
+      // alert("Username or Password Not Recognized");
       
   }
   handleCreateNew = event => {
@@ -99,10 +107,8 @@ export class MainApp extends React.Component {
   }
 
   handleLogOut = event => {
-    alert("yo");
-    this.setState({
-      start: 0
-    })
+    // alert("yo");
+    this.setState({newAccount: false});
   }
 
   handleSubmit2 = event => {
@@ -130,13 +136,16 @@ export class MainApp extends React.Component {
   renderRegistration(){
     return (
          <div className="register">
+         <h className = "regHead">New User Registration</h>
+         <br></br>
+         <a className = "return"  onClick ={this.handleLogOut}>Return to Login</a>
       <form onSubmit={this.handleCreateNew}>
       <label>
-         Login:
+      <strong>Username:</strong> <br></br>
         <input type="text" name="Login" onChange={this.handleChangeLogin} />
       </label>
       <label>
-        Password:
+      <strong>Password:</strong>
         <input type="text" name="Password" onChange={this.handleChangePassword} />
       </label>
       <button type="submit">Create New User</button>
@@ -153,15 +162,15 @@ export class MainApp extends React.Component {
         <div className = "card-body">
         <form onSubmit={this.handleSubmitLogin}>
           <label>
-             Login:
+            <strong>Username:</strong> <br></br>
             <input type="text" name="Login" onChange={this.handleChangeLogin} />
           </label>
           
           <label>
-            Password:
+          <strong>Password:</strong>
             <input type="text" name="Password" onChange={this.handleChangePassword} />
           </label>
-          <button type="submit">Submit</button>
+          <button type="submit">Login</button>
         </form>
         <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
         <br></br>
