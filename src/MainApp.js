@@ -153,11 +153,12 @@ export class MainApp extends React.Component {
     )
   }
   renderLogin(){
-    
+    // return (<h className = "regHead">Welcome,<br></br>Please Log In Here</h>);
     return (
+      // <div><h className = "regHead">Welcome,<br></br>Please Log In Here</h></div>
       <div className = "start">
-        
-        <main>
+        <h className = "regHead">Welcome,<br></br>Please Log In Here</h>
+        <div>
         <div className = "card-body">
         <form onSubmit={this.handleSubmitLogin}>
           <label>
@@ -177,7 +178,7 @@ export class MainApp extends React.Component {
 
 
       </div>
-        </main>
+        </div>
       </div>
     );
 
@@ -227,7 +228,7 @@ export class MainApp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.start ===0
+        {this.state.start === 0
           ? this.renderStart()
           : this.renderPage()}
       </div>
