@@ -1,40 +1,7 @@
 {
   "users": {
     "noahgm": {
-      "passwordHash": "$2b$10$.OcSL8EiqWig7v7vpqTvDOMZ9Hv2qcoy4YL0TxYR2qIgl4PA4f31a",
-      "data": {
-        "role": 2,
-        "description": "New User"
-      }
-    },
-    "fake": {
-      "passwordHash": "$2b$10$qzgv92KDtfizCIFPzmsjj.mcqKhqjoizG6QkYIMaO8b0MEs2zqpja",
-      "data": {
-        "role": 2,
-        "description": "New User"
-      }
-    },
-<<<<<<< HEAD
-    "jvanglish": {
-      "passwordHash": "$2b$10$EgcUjK7iuqgRlPh5EigAgOqc5R20fYCJyvc.yO3PquzVBkAYkfM9i",
-=======
-    "jacob": {
-      "passwordHash": "$2b$10$Gz/XrurTCqH1Jq7J3rhFxOKpq2vmWz80biovYWdntINe0q9u7Yoka",
->>>>>>> c8ce2bbf3c74c933a72aeee554d7bd15e92dc5a6
-      "data": {
-        "role": 2,
-        "description": "New User"
-      }
-    },
-    "newaccount": {
-      "passwordHash": "$2b$10$gHsJh2CR7EYz.32W6ciglOcxUdavg0lKLfkAEujYD/YE1JTewbM6e",
-      "data": {
-        "role": 2,
-        "description": "New User"
-      }
-    },
-    "newcouunt2": {
-      "passwordHash": "$2b$10$5AJEJmiN46qXeSVPpno1sus7hhquKmz/XveB4PE1D1/9bauPLaq6S",
+      "passwordHash": "$2b$10$5KJNb/FNr7vA4VWBTdioTOlqIEYEAxCh7kJ2xmXI7zyl33MDxWMTa",
       "data": {
         "role": 2,
         "description": "New User"
