@@ -148,7 +148,7 @@ export class MainApp extends React.Component {
       <strong>Password:</strong>
         <input type="text" name="Password" onChange={this.handleChangePassword} />
       </label>
-      <button type="submit">Create New User</button>
+      <button class ="button is-success is-light" type="submit">Create New User</button>
     </form>
     </div>
     )
@@ -171,7 +171,7 @@ export class MainApp extends React.Component {
           <strong>Password:</strong>
             <input type="text" name="Password" onChange={this.handleChangePassword} />
           </label>
-          <button type="submit">Login</button>
+          <button class ="button is-success is-center" type="submit">Login</button>
         </form>
         <p>Continue as Guest? click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
         <br></br>

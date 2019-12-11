@@ -111,6 +111,23 @@ handleFilterChange  = event => {
 
     return (
      <div>
+
+       {/* <div class="field" id="searchbar">
+        <div class ="control">
+        <input class="input is-primary" type="text" placeholder="Search For Restaurants Here"></input>
+        </div>
+       </div>
+
+<form autocomplete="off" action="/action_page.php">
+  <div class="autocomplete">
+    <input id="myInput" type="text" name="myCountry" placeholder="Country"></input>
+  </div>
+  <input type="submit"></input>
+</form> */}
+
+
+       
+       
      <div className="filter">
 
 <span className = "title">Filter Options</span> <br/>
