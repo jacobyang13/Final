@@ -17,10 +17,10 @@ router.get('/examplePost/authors', parseGet, function (req, res) {
   }
 });
 
-router.post('/examplePost', parsePost, function (req, res) {
-  const result = req.handlePost(publicStore);
+router.get('/restaurants', parseGet, function (req, res) {
+  const result = req.handleGet(publicStore);
   if (typeof result !== 'undefined') {
-
+    console.log(result);
     res.send({result})
   }
 });

@@ -23,11 +23,7 @@ export class MainApp extends React.Component {
 
   }
   componentDidMount = () => {
-    pubRoot.get('/examplePost/authors')
-      .then(res => {
-        const persons = res.data.result.first;
-        this.setState({ person: persons });
-      })
+  
      
   }
   handleChange = event => {

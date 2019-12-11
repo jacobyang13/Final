@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import heroes from './data.js'
+//import heroes from './data.js'
 const pubRoot = new axios.create({
-  baseURL: "http://localhost:3000/account"
+  baseURL: "http://localhost:3000/public"
 });
 
 export class cardPage extends React.Component {
@@ -13,49 +13,104 @@ export class cardPage extends React.Component {
       name: "",
       person:[],
       login: '0',
-      heroCards: []
+      heroCards: {},
+      defaultHeroCards: {},
+      filterCards:{},
+      gf: false,
+      kosher: false,
+      nutAllergy: false,
+      veganFriendly: false
+
     };
 
   }
   componentDidMount = () => {
-     
-  }
-  renderCards = () => {
-  return (heroes.map((hero, id) => (
-
-
-      <div>
-      <div id = {hero.id}  className = "result" >
-         
-         <h1 className = "title" >{hero.name}</h1>
-         <br/>
-         <h1 className = "subtitle" >{hero.address}</h1>
-         <p > {hero.hours}</p>
-         
-         <img src= {hero.img} alt="Hero Image"/>
-         <button editween= {hero.id} className = "button" type="button" >Reviews</button>
-         
-     </div>
-     </div>
-             
-
-  )));
+    pubRoot.get('/restaurants')
+    .then(res => {
+      this.setState({
+        heroCards: res.data.result,
+        defaultHeroCards: res.data.result
+      })
+    })
   }
 
- 
+
+  handleGfChange = event => 
+    this.setState({ gf: event.target.checked })
+    handleKosherChange = event => 
+    this.setState({kosher: event.target.checked })
+    handleNutChange = event => 
+    this.setState({nutAllergy: event.target.checked })
+    handleVeganChange = event => 
+    this.setState({veganFriendly: event.target.checked })
+    
+  
+handleFilterChange  = event => {
+    event.preventDefault();
+    const hero = this.state.defaultHeroCards
+
+    const checkGF = this.state.gf
+    const checkKosher = this.state.kosher 
+    const checkNut = this.state.nutAllergy
+    const checkVegan = this.state.veganFriendly
+    var heroFilter = this.state.defaultHeroCards
+    if(!checkGF && !checkKosher && !checkNut && !checkVegan){
+      heroFilter = this.state.defaultHeroCards
+    }
+    else{
+      if(checkGF){
+        heroFilter = Object.keys(hero).map(function (key) {
+          if(hero[key].gf === checkGF) {
+            return hero[key]
+          }
+        });
+      }
+      
+      if(checkKosher){
+        heroFilter = Object.keys(hero).map(function (key) {
+          if(hero[key].kosher_options === checkKosher) {
+            return hero[key]
+          }
+        });
+      }
+      if(checkNut){
+        heroFilter = Object.keys(hero).map(function (key) {
+          if(hero[key].nut_friendly === checkNut) {
+            return hero[key]
+          }
+        });
+      }
+      if(checkVegan){
+        heroFilter = Object.keys(hero).map(function (key) {
+          if(hero[key].vegan === checkVegan) {
+            return hero[key]
+          }
+        });
+      }
+      heroFilter = heroFilter.filter(function( element ) {
+        return element !== undefined;
+     });
+    }
+   
+
+   
+   this.setState({heroCards: heroFilter})
+    
+      
+  }
   renderHeroEditForm = () => {
 
     return (
      <div>
-     <div class="filter">
+     <div className="filter">
 
-<span class = "title">Filter Options</span> <br/>
+<span className = "title">Filter Options</span> <br/>
 
-<input id = "gf" type="checkbox" />Gluten Free Options<br/>
-<input id = "kosher" type="checkbox" />Kosher<br/>
-<input id = "nut" type="checkbox"/>Nut-Allergy Friendly<br/>
-<input id = "vegan" type="checkbox"/>Vegan Friendly<br></br>
-<input class = "s" type="submit" value="Filter"/>
+<input id = "gf" type="checkbox" checked={this.state.gf} onChange={this.handleGfChange} />Gluten Free Options<br/>
+<input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
+<input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
+<input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
+<input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
 
         </div>
     </div>
@@ -66,7 +121,37 @@ export class cardPage extends React.Component {
     return (
       <div>
         {this.renderHeroEditForm()}
-        {this.renderCards()}
+        {Object.keys(this.state.heroCards).map((key, id) => (
+
+
+<div  key={id}> 
+<div id = {this.state.heroCards[key].id}  className = "result" >
+   
+   <h1 className = "title" >{this.state.heroCards[key].name}</h1>
+   <br/>
+   <h1 className = "subtitle" >{this.state.heroCards[key].address}</h1>
+   <p > {this.state.heroCards[key].hours}</p>
+   
+   <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
+        <form method="post">
+            <p className="clasificacion">
+                <input id="r1" type="radio" name="star" value="5"></input><label>&#9733;</label>
+                <input id="r2" type="radio" name="star" value="4"></input><label>&#9733;</label>
+                <input id="r3" type="radio" name="star" value="3"></input><label>&#9733;</label>
+                <input id="r4" type="radio" name="star" value="2"></input><label>&#9733;</label>
+                <input id="r5" type="radio" name="star" value="1"></input><label>&#9733;</label>
+            </p>
+            <p>
+                <input type="submit" value="Submit Review" name="submit" />
+            </p>
+          </form>
+</div>
+</div>
+       
+
+
+))}
+      
       </div>
     )
   }

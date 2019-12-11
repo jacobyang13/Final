@@ -1,14 +1,3 @@
-/**
- * Course: COMP 426
- * Assignment: a05
- *
- * This file defines data to be rendered to the page.
- */
-
-
-/**
- * Represents a list of heroic users
- */
 const heroicData = [{
     id: 0,
     name: "Hibachi & Co",

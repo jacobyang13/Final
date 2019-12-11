@@ -12,30 +12,10 @@
 .s{
     color: red;
 }
-.rating{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-}
-.rating input{
-    /*display: none;*/
-}
-.rating label{
-    display: block;
-    cursor: pointer;
-    width: 50px;
-    background: #ccc;
-}
-.rating label:before{
-    content: '\f005';
-
-}
 
 .result {
     max-width: 1000px;
-    max-height: 500px;
+    max-height: 1000px;
     margin-left: auto;
     margin-right: auto;
     padding: 2em 1em;
@@ -53,5 +33,63 @@
         background-attachment: scroll; 
   }
   
+  .result {
+    max-width: 1000px;
+    max-height: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em 1em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  }
 
+  #criteria{
+      background-color: peachpuff;
+  }
+
+  #root {
+        background-image: url('/r_icons/morehead.jpg');
+        background-attachment: scroll; 
+  }
+
+form {
+  width: 250px;
+  margin: 1px auto;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+}
+
+form p,
+form input[type="submit"] {
+  text-align: center;
+  font-size: 20px;
+}
+
+#wrapper form input[type="submit"] {
+  border: 1px solid #d9d9d9;
+  background-color: #efefef;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: blue;
+}
+
+input[type="radio"]:checked ~ label {
+  color: blue;
+}
   
