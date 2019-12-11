@@ -110,7 +110,6 @@ handleFilterChange  = event => {
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
 <input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
-
         </div>
     </div>
             )
@@ -135,11 +134,7 @@ render() {
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
-<<<<<<< HEAD
         <form>
-=======
-   <form onSubmit>
->>>>>>> 6df31cf4ecb35a3c20f0b8cbfc19ab627a8528ad
                   <span>Ratings:</span><progress class="progress is-info" value="50" max="100" data-text="50%">30</progress>
                   <p class= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
                       <input id="r1" type="radio" name="star" value="5"></input><label for="r1">1&#9733;</label>
