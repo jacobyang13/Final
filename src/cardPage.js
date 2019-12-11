@@ -5,7 +5,6 @@ import axios from 'axios';
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
 });
-
 export class cardPage extends React.Component {
   constructor(props) {
     super(props);
@@ -17,10 +16,13 @@ export class cardPage extends React.Component {
       heroCards: {},
       defaultHeroCards: {},
       filterCards:{},
+      ratings :[],
       gf: false,
       kosher: false,
       nutAllergy: false,
-      veganFriendly: false
+      veganFriendly: false,
+      reviewRating: 0,
+      avg: 0,
     };
 
   }
@@ -34,7 +36,29 @@ export class cardPage extends React.Component {
       })
     })
   }
-
+  getRatings = (ratings) =>{
+    var num = 0;
+    var den = ratings.length;
+    for(var i = 0; i < ratings.length; i++){
+      if(ratings[i] == 1){
+        num += 0;
+      }
+      else if(ratings[i] == 2){
+        num+= 25;
+      }
+      else if(ratings[i] == 3){
+        num+= 50;
+      }
+      else if(ratings[i] == 4){
+        num+= 75;
+      }
+      else if(ratings[i] == 5){
+        num+= 100;
+      }
+    }
+    var avg = num/den; 
+    this.setState({avg:avg});
+  }
   handleViewMap = () => {
     console.log("hi");
     return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
@@ -120,7 +144,19 @@ handleFilterChange  = event => {
     </div>
             )
 };
-
+setReviewButton(event) {
+  this.setState({reviewRating: parseInt(event.target.value,10)})
+}
+handleSubmitReview = event =>{
+  event.preventDefault();
+  
+  console.log(this.state.reviewRating)
+  this.setState({
+    ratings: this.state.ratings.concat(this.state.reviewRating)
+  })
+  this.getRatings(this.state.ratings)
+ console.log(this.state.ratings)
+}
   render() {
     return (
       <div>
@@ -142,16 +178,18 @@ handleFilterChange  = event => {
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
         <form>
-                  <span>Ratings:</span><progress class="progress is-info" value="50" max="100" data-text="50%">30</progress>
-                  <p class= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
-                      <input id="r1" type="radio" name="star" value="5"></input><label for="r1">1&#9733;</label>
-                      <input id="r2" type="radio" name="star" value="4"></input><label for="r2">2&#9733;</label>
-                      <input id="r3" type="radio" name="star" value="3"></input><label for="r3">3&#9733;</label>
-                      <input id="r4" type="radio" name="star" value="2"></input><label for="r4">4&#9733;</label>
-                      <input id="r5" type="radio" name="star" value="1"></input><label for="r5">5&#9733;</label><br></br>
+                  <span>Ratings:</span><progress className="progress is-info" value={this.state.avg} max="100" data-text="100%">30</progress>
+                  <p onChange={this.setReviewButton.bind(this)} className= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
+          
+                      <input id="r1" type="radio" name="star" value="1"></input><label htmlFor="r1">1&#9733;</label>
+                      <input id="r2" type="radio" name="star" value="2"></input><label htmlFor="r2">2&#9733;</label>
+                      <input id="r3" type="radio" name="star" value="3"></input><label htmlFor="r3">3&#9733;</label>
+                      <input id="r4" type="radio" name="star" value="4"></input><label htmlFor="r4">4&#9733;</label>
+                      <input id="r5" type="radio" name="star" value="5"></input><label htmlFor="r5">5&#9733;</label><br></br>
+                  
                   </p>
-                      <div class ="buttons is-centered">
-                        <button onClick={this.handleSubmitReview} class = "button is-link is-centered" type={this.state.heroCards[key].id} value="Submit Review" name="submit">Submit Review</button>
+                      <div className ="buttons is-centered">
+                        <button onClick={this.handleSubmitReview} className = "button is-link is-centered" type={this.state.heroCards[key].id} value="Submit Review" name="submit">Submit Review</button>
                       </div>
               </form>   
 </div>
