@@ -14,6 +14,7 @@ export class MainApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      guest: false,
       name: "",
       person:[],
       login: '',
@@ -194,7 +195,7 @@ export class MainApp extends React.Component {
       <div>
           <Nav className = "nav"/>
        <main>
-       <CardPage />
+       <CardPage guest = {this.state.guest}/>
         {/* <form onSubmit={this.handleSubmit}>
           <label>
             Person Name:
