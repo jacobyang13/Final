@@ -14,27 +14,8 @@
         "description": "New User"
       }
     },
-<<<<<<< HEAD
     "jvanglish": {
       "passwordHash": "$2b$10$EgcUjK7iuqgRlPh5EigAgOqc5R20fYCJyvc.yO3PquzVBkAYkfM9i",
-=======
-    "jacob": {
-      "passwordHash": "$2b$10$Gz/XrurTCqH1Jq7J3rhFxOKpq2vmWz80biovYWdntINe0q9u7Yoka",
->>>>>>> c8ce2bbf3c74c933a72aeee554d7bd15e92dc5a6
-      "data": {
-        "role": 2,
-        "description": "New User"
-      }
-    },
-    "newaccount": {
-      "passwordHash": "$2b$10$gHsJh2CR7EYz.32W6ciglOcxUdavg0lKLfkAEujYD/YE1JTewbM6e",
-      "data": {
-        "role": 2,
-        "description": "New User"
-      }
-    },
-    "newcouunt2": {
-      "passwordHash": "$2b$10$5AJEJmiN46qXeSVPpno1sus7hhquKmz/XveB4PE1D1/9bauPLaq6S",
       "data": {
         "role": 2,
         "description": "New User"
