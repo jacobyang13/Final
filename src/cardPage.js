@@ -44,20 +44,18 @@ export class cardPage extends React.Component {
          <p > {hero.hours}</p>
          
          <img src= {hero.img} alt="Hero Image"/>
-      
-                    <form action="" method="post">
-                      <p class="clasificacion">
-                         <input id="r1" type="radio" name="estrellas" value="5"></input><label for="r1">&#9733;</label>
-                         <input id="r2" type="radio" name="estrellas" value="4"></input><label for="r2">&#9733;</label>
-                         <input id="r3" type="radio" name="estrellas" value="3"></input><label for="r3">&#9733;</label>
-                         <input id="r4" type="radio" name="estrellas" value="2"></input><label for="r4">&#9733;</label>
-                         <input id="r5" type="radio" name="estrellas" value="1"></input><label for="r5">&#9733;</label>
-                      </p>
-                      <p>
-                        <input type="submit" value="submit" name="submit" />
-                      </p>
-                    </form>
-
+              <form method="post">
+                  <p class="clasificacion">
+                      <input id="r1" type="radio" name="star" value="5"></input><label for="r1">&#9733;</label>
+                      <input id="r2" type="radio" name="star" value="4"></input><label for="r2">&#9733;</label>
+                      <input id="r3" type="radio" name="star" value="3"></input><label for="r3">&#9733;</label>
+                      <input id="r4" type="radio" name="star" value="2"></input><label for="r4">&#9733;</label>
+                      <input id="r5" type="radio" name="star" value="1"></input><label for="r5">&#9733;</label>
+                  </p>
+                  <p>
+                      <input type="submit" value="Submit Review" name="submit" />
+                  </p>
+                </form>
      </div>
      </div>
              

@@ -57,6 +57,7 @@ export class MainApp extends React.Component {
         }
         console.log(res);
         console.log(res.data);
+        // accountRoot.append("NEW ACCOUNT CREATED");
       })
       
   }
@@ -124,12 +125,14 @@ export class MainApp extends React.Component {
              Login:
             <input type="text" name="Login" onChange={this.handleChangeLogin} />
           </label>
+          
           <label>
             Password:
             <input type="text" name="Password" onChange={this.handleChangePassword} />
           </label>
           <button type="submit">Submit</button>
         </form>
+        <br></br>
         <form onSubmit={this.handleCreateNew}>
           <label>
              Login:
@@ -178,7 +181,7 @@ export class MainApp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.start === 1
+        {this.state.start === 0
           ? this.renderStart()
           : this.renderPage()}
       </div>
