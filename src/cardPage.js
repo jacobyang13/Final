@@ -141,7 +141,7 @@ handleSubmitReview = event =>{
       <div>
         <div>
          
-          <p>You are a guest: <p>{this.state.guest === false ? <p>false</p> : <p>true</p>}</p></p>
+          <div>You are a guest: <p>{this.state.guest === false ? <span>false</span> : <span>true</span>}</p></div>
         </div>
         {this.renderHeroEditForm()}
         {Object.keys(this.state.heroCards).map((key, id) => (

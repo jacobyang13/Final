@@ -3,6 +3,8 @@ import './App.css';
 import Nav from './Nav.jsx'
 import axios from 'axios';
 import CardPage from './cardPage.js'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
 });
@@ -156,8 +158,8 @@ export class MainApp extends React.Component {
     // return (<h className = "regHead">Welcome,<br></br>Please Log In Here</h>);
     return (
       // <div><h className = "regHead">Welcome,<br></br>Please Log In Here</h></div>
-      <div className = "start">
-        <h className = "regHead">Welcome,<br></br>Please Log In Here</h>
+      <div className = "">
+        <h1 className = "regHead">Welcome,<br></br>Please Log In Here</h1>
         <div>
         <div className = "card-body">
         <form onSubmit={this.handleSubmitLogin}>
@@ -172,7 +174,7 @@ export class MainApp extends React.Component {
           </label>
           <button type="submit">Login</button>
         </form>
-        <p>Continue as Guest? Click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
+        <p>Continue as Guest? Click <a  onClick={this.handleContinueAsGuest}>Here</a></p>
         <br></br>
         <p>Or <a href="#" onClick={this.changeNewAccountState}>Create A New Account</a></p>
 
@@ -187,7 +189,6 @@ export class MainApp extends React.Component {
     
     return (
       <div className = "start">
-
          <div>
         {this.state.newAccount === false
           ? this.renderLogin()
@@ -202,25 +203,18 @@ export class MainApp extends React.Component {
   renderPage() {
     return (
       <div>
-          <Nav className = "nav"/>
+         <BrowserRouter>
+              <div>
+                <Route component={Nav}></Route>
+
+                <Switch>
+                  <Route exact path='/' exact render={(props) => (<CardPage guest = {this.state.guest}/>)}/>
+
+                </Switch>
+              </div>
+            </BrowserRouter>
        <main>
-       <CardPage guest = {this.state.guest}/>
-        {/* <form onSubmit={this.handleSubmit}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
-        <form onSubmit={this.handleSubmit2}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
-      </div>
-          <h1>{this.state.person}</h1> */}
+
         </main>
       </div>
     )
