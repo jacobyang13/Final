@@ -180,7 +180,11 @@ export class MainApp extends React.Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         {this.state.start === 0
+=======
+        {this.state.start === 1
+>>>>>>> 08559ab9dc04674541daa56cf8ce037c6fde6ecb
           ? this.renderStart()
           : this.renderPage()}
       </div>
