@@ -13,6 +13,10 @@ const accountRoot = new axios.create({
   baseURL: "http://localhost:3000/account"
 });
 
+const userRoot = new axios.create({
+  baseURL: "http://localhost:3000/user"
+});
+
 export class MainApp extends React.Component {
   constructor(props) {
     super(props);
@@ -89,8 +93,49 @@ export class MainApp extends React.Component {
         console.log(res);
         console.log(res.data);
       })
+
+
+      // ---------------
+  
+      // userRoot.post('/create', {
+      //   "name":this.state.login,
+      //   "vegan": this.state.vegan,
+      //   "gf": this.state.gf,
+      //   "nuts": this.state.nuts,
+      //   "kosher": this.state.kosher,
+      //   "data": {
+      //     "role": 2,
+      //     "description": "New User"
+      //   }
+      // })
+      //   .then(res => {
+      //     alert("Account created Succesfully");
+      //     // this.setState({newAccount: false});
+      //     console.log(res);
+      //     console.log(res.data);
+      //   })
       
   }
+
+  handleStorePrefs = event => {
+  
+    event.preventDefault();
+
+    userRoot.get('/users/data', {
+       
+      })
+        .then(res => {
+          alert("Prefs Stored");
+          // this.setState({newAccount: false});
+          console.log(res);
+          console.log(res.data);
+        })
+
+      
+  }
+
+  
+  
   handleSubmit = event => {
     event.preventDefault();
 
@@ -158,7 +203,7 @@ export class MainApp extends React.Component {
   renderRegistration(){
     return (
          <div className="register">
-         <h className = "regHead">New User Registration</h>
+         <h1 className = "regHead">New User Registration</h1>
          <br></br>
          <a href="#" className = "return"  onClick ={this.handleLogOut}>Return to Login</a>
       <form onSubmit={this.handleCreateNew}>
@@ -176,7 +221,7 @@ export class MainApp extends React.Component {
       <input onChange={this.saveNut} type="checkbox" name="Password"/> I have a Nut Allergy <br></br>
       <input onChange={this.saveKosher} type="checkbox" name="Password"/> I keep Kosher
     
-      <button class ="button is-success is-light" type="submit">Create New User</button>
+      <button onClick={this.handleStorePrefs} class ="button is-success is-light" type="submit">Create New User</button>
     </form>
     </div>
     )

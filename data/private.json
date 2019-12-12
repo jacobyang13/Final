@@ -170,6 +170,7 @@
       "nut_friendly": true,
       "vegan": true
     },
+<<<<<<< HEAD
     "cp": {
       "count": 0,
       "sum": 0,
@@ -220,6 +221,20 @@
       "gf": true,
       "nut_friendly": true,
       "vegan": false
+=======
+    "undefined": {
+      "ratings": [
+        "1",
+        "2"
+      ],
+      "avg": 10
+    },
+    "Lotsa Stone Fired Pizza": {
+      "ratings": []
+    },
+    "Moe's Southwest Grill": {
+      "ratings": []
+>>>>>>> 930a29630f76ce582857c6a1a500fc556a95d1cb
     }
   }
 }

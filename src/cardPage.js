@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Autocomplete from './Autocomplete.js';
+// import $ from "jquery";
 //import heroes from './data.js'
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
@@ -119,7 +120,7 @@ handleFilterChange  = event => {
      <div className = "fullWidth">       
      <div className="filter">
 <div className = "center">
-<span >Filter Options</span> <br/>
+<strong>Filter Options</strong> <br/>
 
 <input id = "gf" type="checkbox" checked={this.state.gf} onChange={this.handleGfChange} />Gluten Free Options<br/>
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
@@ -142,7 +143,25 @@ setReviewButton(event) {
   })
 
 }
-
+handleSearch = event =>{
+  this.setState({heroCards: {"mong": {
+      "count": 0,
+      "sum": 0,
+      "score": 0,
+      "id": 5,
+      "name": "Ms. Mong",
+      "name2": "mong",
+      "address": "163 E Franklin St, Chapel Hill, NC 27514",
+      "hours": "11AM-10PM",
+      "img": "r_icons/mong.png",
+      "color": "black",
+      "backgroundColor": "#B8B4F9",
+      "kosher_options": false,
+      "gf": false,
+      "nut_friendly": false,
+      "vegan": false
+    }}})
+}
 handleSubmitReview = event =>{
   event.preventDefault();
       privRoot.post('/users/' + event.target.value + '/score', {
@@ -178,24 +197,33 @@ handleSubmitReview = event =>{
       {/* <h1>React Autocomplete Demo</h1> */}
       <section className="section">
       <div className="container">
-      <h2>Start typing and experience the autocomplete wizardry!</h2>
-      <Autocomplete
+      <h2>Search for a Chapel Hill Restaurant!</h2>
+      <Autocomplete  
         suggestions={[
-          "Alligator",
-          "Bask",
-          "Crocodilian",
-          "Death Roll",
-          "Eggs",
-          "Jaws",
-          "Reptile",
-          "Solitary",
-          "Tail",
-          "Wetlands"
+          "Hibachi & Co",
+          "Moe's Southwest Grill",
+          "Chipotle Mexican Grill",
+          "The Pizza Press",
+          "Bandito's Mexican Cafe",
+          "Ms. Mong",
+          "Sutton's Drug Store",
+          "Panera Bread",
+          "Chabad House",
+          "Cosmic Cantina",
+          "Curry Point Express",
+          "Sup Dogs",
+          "Lotsa Stone Fired Pizza"
         ]}
       />
+      
+       <button onClick={this.handleSearch}>Go</button>
+       
       </div>
       </section>
+     
     </div>
+
+
 
         {Object.keys(this.state.heroCards).map((key, id) => (
 
