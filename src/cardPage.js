@@ -45,11 +45,7 @@ export class cardPage extends React.Component {
     
   }
  
-  handleViewMap = () => {
-    console.log("hi");
-    return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
-    // AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
-  }
+    //KEY: AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
 
   handleGfChange = event => 
     this.setState({ gf: event.target.checked })
@@ -251,8 +247,10 @@ handleSubmitReview = event =>{
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
 
+   <iframe width="600" height="450" frameborder="0" /*style="border:0"*/ src={this.state.heroCards[key].src} allowfullscreen></iframe>
 
-<form >
+
+<form>
           <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].score} max="100" data-text={this.state.heroCards[key].score}>30</progress>
          < div >
 <input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
@@ -265,6 +263,7 @@ handleSubmitReview = event =>{
                 <button onClick = {this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name2} name="submit">Submit Review</button>
               </div>
       </form>   
+
  
 </div>
 </div>
