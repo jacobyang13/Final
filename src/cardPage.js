@@ -156,6 +156,21 @@ handleFilterChange  = event => {
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
+<div className="autocomplete">
+      <Autocomplete
+        suggestions={[
+          "Hibachi & Co",
+          "Moe's Southwest Grill",
+          "Chipotle Mexican Grill",
+          "The Pizza Press",
+          "Bandito's Mexican Cafe",
+          "Ms. Mong",
+          "Sutton's Drug Store",
+          "Panera Bread",
+          "Chabad House"
+        ]}
+      />
+    </div>
 <input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
         </div>
     </div>
@@ -187,24 +202,6 @@ handleSubmitReview = event =>{
           
         </div>
         {this.renderHeroEditForm()}
-        <div>
-      <h1>React Autocomplete Demo</h1>
-      <h2>Start typing and experience the autocomplete wizardry!</h2>
-      <Autocomplete
-        suggestions={[
-          "Alligator",
-          "Bask",
-          "Crocodilian",
-          "Death Roll",
-          "Eggs",
-          "Jaws",
-          "Reptile",
-          "Solitary",
-          "Tail",
-          "Wetlands"
-        ]}
-      />
-    </div>
         {Object.keys(this.state.heroCards).map((key, id) => (
 
 
@@ -244,5 +241,7 @@ handleSubmitReview = event =>{
   }
   
 }
+
+
 
 export default cardPage;
