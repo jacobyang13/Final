@@ -57,7 +57,7 @@ export class cardPage extends React.Component {
         num+= 100;
       }
     }
-    var avg = num/den; 
+    var avg = Math.round(num/den); 
     this.setState({avg:avg});
   }
   handleViewMap = () => {
@@ -225,7 +225,7 @@ handleSubmitReview = event =>{
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
         <form>
-                  <span>Ratings:</span><progress className="progress is-info" value={this.state.avg} max="100" data-text="100%">30</progress>
+                  <span>Ratings:</span><progress className="progress is-info" value={this.state.avg} max="100" data-text={this.state.avg}>30</progress>
                   <p onChange={this.setReviewButton.bind(this)} className= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
           
                       <input id="r1" type="radio" name="star" value="1"></input><label htmlFor="r1">1&#9733;</label>
