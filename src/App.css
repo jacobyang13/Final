@@ -8,19 +8,51 @@
   outline: black;
   outline-width: 5px;
 }
-#fullWidth{
-  width: 50%;
-  background-color: lightcoral;
+.k{
+  margin-left: 10px;
+}
+.n{
+  margin-left: 10px;
+}
+.v{
+  margin-left: 10px;
+}
+.cs{
+  margin-left: 10px;
+  padding-left:10px;
+}
+.gf{
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+.spaceUp{
+  margin-top: 20px;
+  padding-top: 20px;
+}
+#hero{
+  width: 60%;
+  padding-top:10px;
+  padding-left: 10px;
+  padding-bottom:10px;
+  background-color: whitesmoke;
   float:left;
-  height:294px;
-  border-radius: 0px;
+  max-height:100px;
   border-right: none;
+  font-size: 18.5px;
+  border-radius: 0px;
+}
+#search{
+  font-size: 18px;
 }
 #fullWidth2{
-  width: 50%;
-  background-color: lightcoral;
+  padding-top: 10px;
+  padding-left:10px;
+  padding-bottom:10px;
+  width: 40%;
+  background-color: whitesmoke;
   float:left;
-  height:294px;
+  max-height:100px;
   border-right: none;
   border-radius: 0px;
 
@@ -30,6 +62,7 @@
   color:white;
 }
 #center{
+  margin-top: 10px;
   text-align: center;
 }
 .center{
@@ -64,7 +97,7 @@
   background-color: black;
 }
 .filter{
-    background-color: lightcoral;
+    background-color: #202121;
     
     margin-left: auto;
     margin-right: auto;
@@ -98,7 +131,10 @@
         background-image: url('/r_icons/morehead.jpg');
         background-attachment: scroll; 
   }
-  
+  .card-img-top{
+
+    height: 20%
+  }
   .result {
     max-width: 100%;
     max-height: 200000px;
@@ -111,10 +147,17 @@
     /* overflow: hidden; */
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
   }
+  #centered{
+    margin-left:25px;
+  }
   #formCard{
     min-height: 200px;
-    width: 50%;
-    height: 70vh;
+    margin-top: 100px;
+    margin-left: 48px;
+    margin-right: 30px;
+    border-radius: none;
+    width: 28%;
+    height: 55vh;
     float:left;
     /* background-color: rgba(218, 194, 218, 0.842); */
 
