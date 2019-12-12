@@ -14,7 +14,7 @@ const {userStore} = require('../data/DataStore');
  * Every request needs to be from a logged in user.
  * Modify path prefixes each request with the user's name.
  */
-router.use([authenticateUser, modifyUserPath]);
+// router.use([authenticateUser, modifyUserPath]);
 
 router.get('/*', parseGet, function (req, res) {
   const result = req.handleGet(userStore);
