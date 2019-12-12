@@ -1,6 +1,9 @@
 {
   "restaurants":{
     "hibachi":{
+      "count": 0,
+      "sum": 0,
+      "score": 0,
       "id": 0,
       "name": "Hibachi & Co",
       "address": "155 E Franklin St, Chapel Hill, NC 27514",
@@ -14,6 +17,9 @@
       "vegan": false
     } ,
     "moes": {
+      "count": 0,
+      "sum": 0,
+      "score": 0,
       "id": 1,
       "name": "Moe's Southwest Grill",
       "address": "110 W Franklin St, Chapel Hill, NC 27516",
@@ -27,6 +33,9 @@
       "vegan": false
   } ,
   "chipotle": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 2,
     "name": "Chipotle Mexican Grill",
     "address": "301 W Franklin St, Chapel Hill, NC 27516",
@@ -40,6 +49,9 @@
     "vegan": false
   } ,
   "pizzapress": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 3,
     "name": "The Pizza Press",
     "address": "133 W Franklin St Suite 120 Suite 120, Chapel Hill, NC 27516",
@@ -53,6 +65,9 @@
     "vegan": false
   } ,
   "banditos": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 4,
     "name": "Bandito's Mexican Cafe",
     "address": "159 1/2 E Franklin St, Chapel Hill, NC 27514",
@@ -66,6 +81,9 @@
     "vegan": false
   } ,
   "mong": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 5,
     "name": "Ms. Mong",
     "address": "163 E Franklin St, Chapel Hill, NC 27514",
@@ -79,6 +97,9 @@
     "vegan": false
   } ,
   "suttons": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 6,
     "name": "Sutton's Drug Store",
     "address": "159 E Franklin St, Chapel Hill, NC 27514",
@@ -92,6 +113,9 @@
     "vegan": false
   } ,
   "panera": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 7,
     "name": "Panera Bread",
     "address": "213 W Franklin St, Chapel Hill, NC 27516",
@@ -105,6 +129,9 @@
     "vegan": false
   } ,
   "chabad": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 8,
     "name": "Chabad House",
     "address": "Somewhere on Malette St.",
@@ -118,6 +145,9 @@
     "vegan": true
   },
   "cosmic": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 9,
     "name": "Cosmic Cantina",
     "address": "Franklin St.",
@@ -131,6 +161,9 @@
     "vegan": true
   },
   "curry point": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 10,
     "name": "Curry Point Express",
     "address": "Franklin St.",
@@ -144,6 +177,9 @@
     "vegan": false
   },
   "sup dogs": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 11,
     "name": "Sup Dogs",
     "address": "Franklin St.",
@@ -157,6 +193,9 @@
     "vegan": false
   },
   "lotsa": {
+    "count": 0,
+      "sum": 0,
+      "score": 0,
     "id": 12,
     "name": "Lotsa Stone Fired Pizza",
     "address": "Franklin St.",
