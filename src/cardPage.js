@@ -119,29 +119,14 @@ handleFilterChange  = event => {
     return (
      <div id = "fullWidth" className = "card">       
      <div >
-<div className = "center">
-<strong>Filter Options</strong> <br/>
+<div className = "center"class = "section">
+<strong class="title">Filter Options</strong> <br/>
 
 <input id = "gf" type="checkbox" checked={this.state.gf} onChange={this.handleGfChange} />Gluten Free Options<br/>
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
-<div className="autocomplete">
-      <Autocomplete
-        suggestions={[
-          "Hibachi & Co",
-          "Moe's Southwest Grill",
-          "Chipotle Mexican Grill",
-          "The Pizza Press",
-          "Bandito's Mexican Cafe",
-          "Ms. Mong",
-          "Sutton's Drug Store",
-          "Panera Bread",
-          "Chabad House"
-        ]}
-      />
-    </div>
-<input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
+<input onClick={this.handleFilterChange} class="button is-large" type="submit" value="Filter"/>
 </div>
         </div>
     </div>
@@ -159,6 +144,7 @@ setReviewButton(event) {
 
 }
 handleSearch = event =>{
+  // alert("You searched " + Autocomplete.state.activeSuggestion)
   this.setState({heroCards: {"mong": {
       "count": 0,
       "sum": 0,
@@ -219,8 +205,8 @@ handleSubmitReview = event =>{
         <div>
       {/* <h1>React Autocomplete Demo</h1> */}
       <div id = "fullWidth2" className = "card">
-      <section >
-      <div >
+      <section class="container">
+      <div class="section">
       <h2>Search for a Chapel Hill Restaurant!</h2>
       <Autocomplete  
         suggestions={[
