@@ -10,7 +10,7 @@ const pubRoot = new axios.create({
 const privRoot = new axios.create({
   baseURL: "http://localhost:3000/user"
 });
-export class cardPage extends React.Component {
+export class Side extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,9 +23,9 @@ export class cardPage extends React.Component {
       filterCards:{},
       ratings :[],
       gf: false,
-      kosher: false,
+      kosher: true,
       nutAllergy: false,
-      veganFriendly: false,
+      veganFriendly: true,
       reviewRating: 1,
       sum: 0,
       count: 0,
@@ -117,8 +117,8 @@ handleFilterChange  = event => {
   renderHeroEditForm = () => {
 
     return (
-     <div id = "fullWidth" className = "card">       
-     <div >
+     <div className = "fullWidth">       
+     <div className="filter">
 <div className = "center">
 <strong>Filter Options</strong> <br/>
 
@@ -126,21 +126,6 @@ handleFilterChange  = event => {
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
-<div className="autocomplete">
-      <Autocomplete
-        suggestions={[
-          "Hibachi & Co",
-          "Moe's Southwest Grill",
-          "Chipotle Mexican Grill",
-          "The Pizza Press",
-          "Bandito's Mexican Cafe",
-          "Ms. Mong",
-          "Sutton's Drug Store",
-          "Panera Bread",
-          "Chabad House"
-        ]}
-      />
-    </div>
 <input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
 </div>
         </div>
@@ -162,7 +147,7 @@ handleSearch = event =>{
   this.setState({heroCards: {"mong": {
       "count": 0,
       "sum": 0,
-      "score": 45,
+      "score": 0,
       "id": 5,
       "name": "Ms. Mong",
       "name2": "mong",
@@ -179,23 +164,16 @@ handleSearch = event =>{
 }
 handleSubmitReview = event =>{
   event.preventDefault();
-  if(event.target.value !== "hibachi"){
-    alert("You are a guest, you need to login to submit reviews")
-  }
- else{
-
-  pubRoot.post('/restaurants/' + event.target.value + '/score', {
-    "data": 95
- 
-  })
-    .then(res => {
-      alert("Review Sent!")
-      console.log("posted")
-      console.log(res.data);
+      privRoot.post('/users/' + event.target.value + '/score', {
+        "data": 95
      
-    })
-    
- }
+      })
+        .then(res => {
+          console.log("posted")
+          console.log(res.data);
+         
+        })
+        
       
   
 
@@ -214,13 +192,11 @@ handleSubmitReview = event =>{
 </div>
           
         </div>
-      
-      
+        {this.renderHeroEditForm()}
         <div>
       {/* <h1>React Autocomplete Demo</h1> */}
-      <div id = "fullWidth2" className = "card">
-      <section >
-      <div >
+      <section className="section">
+      <div className="container">
       <h2>Search for a Chapel Hill Restaurant!</h2>
       <Autocomplete  
         suggestions={[
@@ -245,15 +221,12 @@ handleSubmitReview = event =>{
       </div>
       </section>
      
-      </div>
-      <div >
-        {this.renderHeroEditForm()}
-        </div>
     </div>
 
 
 
         {Object.keys(this.state.heroCards).map((key, id) => (
+
 
 <div id = "formCard" className = "card" key={id}> 
 <div id = {this.state.heroCards[key].id}   >
@@ -290,6 +263,4 @@ handleSubmitReview = event =>{
   
 }
 
-
-
-export default cardPage;
+export default Side;

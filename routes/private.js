@@ -13,7 +13,16 @@ const {privateStore} = require('../data/DataStore');
  * Every request to this route needs
  * to be made from an authenticated user.
  */
-router.use(authenticateUser);
+// router.use(authenticateUser);
+
+// router.get('/restaurants', parseGet, function (req, res) {
+//   const result = req.handleGet(privateStore);
+//   if (typeof result !== 'undefined') {
+//     console.log(result);
+//     res.send({result})
+//   }
+// });
+
 
 router.get('/*', parseGet, function (req, res) {
   const result = req.handleGet(privateStore);
@@ -29,9 +38,9 @@ router.post('/*', parsePost, function (req, res) {
   }
 });
 
-router.delete('/*', parseDelete, function (req, res) {
-  const result = req.handleDelete(privateStore);
-  if (typeof result !== 'undefined') {
-    res.send({result})
-  }
-});
+// router.delete('/*', parseDelete, function (req, res) {
+//   const result = req.handleDelete(privateStore);
+//   if (typeof result !== 'undefined') {
+//     res.send({result})
+//   }
+// });

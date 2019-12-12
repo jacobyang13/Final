@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Nav from './Nav.jsx'
+import MyAccount from './myAccount.js'
 import axios from 'axios';
 import CardPage from './cardPage.js'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
@@ -10,6 +11,10 @@ const pubRoot = new axios.create({
 });
 const accountRoot = new axios.create({
   baseURL: "http://localhost:3000/account"
+});
+
+const userRoot = new axios.create({
+  baseURL: "http://localhost:3000/user"
 });
 
 export class MainApp extends React.Component {
@@ -22,7 +27,11 @@ export class MainApp extends React.Component {
       login: '',
       password: "",
       start: 0,
-      newAccount: false
+      newAccount: false,
+      vegan: false,
+      gf: false,
+      nuts: false,
+      kosher: false
     };
 
   }
@@ -72,6 +81,7 @@ export class MainApp extends React.Component {
     accountRoot.post('/create', {
       "name": this.state.login,
       "pass": this.state.password,
+      // "vegan": this.state.vegan,
       "data": {
         "role": 2,
         "description": "New User"
@@ -83,8 +93,32 @@ export class MainApp extends React.Component {
         console.log(res);
         console.log(res.data);
       })
+
+
+      // ---------------
+  
+      // userRoot.post('/create', {
+      //   "name":this.state.login,
+      //   "vegan": this.state.vegan,
+      //   "gf": this.state.gf,
+      //   "nuts": this.state.nuts,
+      //   "kosher": this.state.kosher,
+      //   "data": {
+      //     "role": 2,
+      //     "description": "New User"
+      //   }
+      // })
+      //   .then(res => {
+      //     alert("Account created Succesfully");
+      //     // this.setState({newAccount: false});
+      //     console.log(res);
+      //     console.log(res.data);
+      //   })
       
   }
+
+  
+  
   handleSubmit = event => {
     event.preventDefault();
 
@@ -134,12 +168,27 @@ export class MainApp extends React.Component {
 
   }
 
+  saveVegan = event => {
+    this.setState({ vegan: event.target.value });
+  }
+  saveGF = event => {
+    this.setState({ gf: event.target.value });
+  }
+  saveNut = event => {
+    this.setState({ nuts: event.target.value });
+  }
+  saveKosher = event => {
+    this.setState({ kosher: event.target.value });
+  }
+
+
+
   renderRegistration(){
     return (
          <div className="register">
-         <h className = "regHead">New User Registration</h>
+         <h1 className = "regHead">New User Registration</h1>
          <br></br>
-         <a className = "return"  onClick ={this.handleLogOut}>Return to Login</a>
+         <a href="#" className = "return"  onClick ={this.handleLogOut}>Return to Login</a>
       <form onSubmit={this.handleCreateNew}>
       <label>
       <strong>Username:</strong> <br></br>
@@ -149,7 +198,13 @@ export class MainApp extends React.Component {
       <strong>Password:</strong>
         <input type="text" name="Password" onChange={this.handleChangePassword} />
       </label>
-      <button class ="button is-success is-light" type="submit">Create New User</button>
+      
+      <input onChange={this.saveVegan} type="checkbox" name="Password"/> I am Vegan <br></br>
+      <input onChange={this.saveGF} type="checkbox" name="Password"/> I am Gluten Free <br></br>
+      <input onChange={this.saveNut} type="checkbox" name="Password"/> I have a Nut Allergy <br></br>
+      <input onChange={this.saveKosher} type="checkbox" name="Password"/> I keep Kosher
+    
+      <button onClick={this.handleStorePrefs} class ="button is-success is-light" type="submit">Create New User</button>
     </form>
     </div>
     )
@@ -174,7 +229,7 @@ export class MainApp extends React.Component {
           </label>
           <button class ="button is-success is-center" type="submit">Login</button>
         </form>
-        <p>Continue as Guest? Click <a  onClick={this.handleContinueAsGuest}>Here</a></p>
+        <p>Continue as Guest? Click <a href="#" onClick={this.handleContinueAsGuest}>Here</a></p>
         <br></br>
         <p>Or <a href="#" onClick={this.changeNewAccountState}>Create A New Account</a></p>
 
@@ -209,6 +264,7 @@ export class MainApp extends React.Component {
 
                 <Switch>
                   <Route exact path='/' exact render={(props) => (<CardPage guest = {this.state.guest}/>)}/>
+                  <Route exact path='/myAccount' exact render={(props) => (<MyAccount/>)}/>
 
                 </Switch>
               </div>
@@ -222,7 +278,7 @@ export class MainApp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.start === 0
+        {this.state.start === 200
           ? this.renderStart()
           : this.renderPage()}
       </div>

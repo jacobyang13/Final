@@ -2,15 +2,38 @@
   color: navy;
   font-size: 5vh;
   font-style: oblique;
-  font-family: fantasy;
+  /* font-family: fantasy; */
 }
 .card-body{
   outline: black;
   outline-width: 5px;
 }
+#fullWidth{
+  width: 50%;
+  background-color: lightcoral;
+  float:left;
+  height:294px;
+  border-radius: 0px;
+  border-right: none;
+}
+#fullWidth2{
+  width: 50%;
+  background-color: lightcoral;
+  float:left;
+  height:294px;
+  border-right: none;
+  border-radius: 0px;
+
+}
 #moveDown{
-  margin-top:1vh;
+  margin-top:1.3vh;
   color:white;
+}
+#center{
+  text-align: center;
+}
+.center{
+  font-size: 25px;
 }
 .return{
   align-content: center;
@@ -46,14 +69,15 @@
   background-color: black;
 }
 .filter{
-    background-color: rgba(241, 204, 179, 0.671);
-    max-width: 800px;
+    background-color: lightcoral;
+    
     margin-left: auto;
     margin-right: auto;
     padding: 2em 1em; 
-    border-radius: 8px;
+  
     overflow: hidden;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    
+
 }
 .s{
     color: red;
@@ -66,13 +90,13 @@
     margin-right: auto;
     padding: 2em 1em;
     border-radius: 8px;
-    /* overflow: hidden; */
+    overflow: hidden;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
     background-color: rgba(218, 194, 218, 0.842);
   }
 
   #criteria{
-      background-color: peachpuff;
+      background-color: rgb(240, 236, 232);
   }
 
   #root {
@@ -81,10 +105,34 @@
   }
   
   .result {
-    max-width: 1000px;
-    max-height: 2000px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
+    max-height: 200000px;
+    position:relative;
+    margin-right:50vw;
+    /* margin-left: auto;
+    margin-right: auto; */
+    padding: 2em 1em;
+    border-radius: 8px;
+    /* overflow: hidden; */
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+  #formCard{
+    min-height: 200px;
+    width: 50%;
+    height: 70vh;
+    float:left;
+    /* background-color: rgba(218, 194, 218, 0.842); */
+
+  }
+  .result2 {
+    max-width: 50%;
+    padding-bottom: 20vh;
+    min-height: 200px;
+    margin-top:-421.2vh;
+    position:relative;
+    margin-left:50vw;
+    /* margin-left: auto;
+    margin-right: auto; */
     padding: 2em 1em;
     border-radius: 8px;
     overflow: hidden;
