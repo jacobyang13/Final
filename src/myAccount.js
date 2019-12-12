@@ -56,7 +56,7 @@ export class myAccount extends React.Component {
   handleUpdateAccount = event => {
     alert("Preferences Successfully Updated!");
     event.preventDefault();
-
+    
     accountRoot.post('/put', {
       "vegan": this.state.vegan,
       "gf": this.state.gf,
