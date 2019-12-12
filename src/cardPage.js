@@ -133,7 +133,7 @@ handleFilterChange  = event => {
 <input className = "k" id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher
 <input className = "n" id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly
 <input className = "v" id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly
-<input class="button" onClick={this.handleFilterChange}  type="submit" value="Filter"/>
+<input id = "b" className="button" onClick={this.handleFilterChange}  type="submit" value="Filter"/>
 </div>
         </div>
     </div>
