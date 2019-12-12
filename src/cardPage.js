@@ -43,7 +43,31 @@ export class cardPage extends React.Component {
     })
     
   }
-
+  getRatings = (count, sum) =>{
+    // var num = 0;
+    // var den = ratings.length;
+    let result = 0;
+    // for(var i = 0; i < count; i++){
+    //   // if(ratings[i] == 1){
+    //   //   num += 0;
+    //   // }
+    //   // else if(ratings[i] == 2){
+    //   //   num+= 25;
+    //   // }
+    //   // else if(ratings[i] == 3){
+    //   //   num+= 50;
+    //   // }
+    //   // else if(ratings[i] == 4){
+    //   //   num+= 75;
+    //   // }
+    //   // else if(ratings[i] == 5){
+    //   //   num+= 100;
+    //   // }
+    // }
+     result = Math.round(sum/count); 
+     result = result * 20;
+    this.setState({avg:result});
+  }
   handleViewMap = () => {
     console.log("hi");
     return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
