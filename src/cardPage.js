@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Autocomplete from './Autocomplete.js';
+import logo from './image3.jpeg';
 // import $ from "jquery";
 //import heroes from './data.js'
 const pubRoot = new axios.create({
@@ -144,6 +145,7 @@ setReviewButton(event) {
 
 }
 handleSearch = event =>{
+  // alert("You searched " + Autocomplete.state.activeSuggestion)
   this.setState({heroCards: {"mong": {
       "count": 0,
       "sum": 0,
@@ -190,11 +192,12 @@ handleSubmitReview = event =>{
     return (
       <div>
         <div>
-        <div className="card" >
-  <div className="card-body">
-    <div className = "card-text"> <h1 id = "center">{this.state.guest === true ? <span>You are a guest, please login
+        <div  >
+  <div >
+    <div > <img src={logo} alt="Logo" /><h1 id = "center2">{this.state.guest === true ? <span>You are a guest, please login
       to gain full access
     </span> : <span>You are logged in</span>}</h1></div>
+    
   </div>
 </div>
           
