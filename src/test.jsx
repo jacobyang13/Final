@@ -14,7 +14,7 @@ var ATLANTIC_OCEAN = {
 };
 
 //code for creating map and geocoding from http://react.tips/reactjs-and-geocoding/
-export class Map extends React.Component {
+export class test extends React.Component {
   constructor(props) {
     super(props);
     this.map = null;
@@ -142,4 +142,4 @@ export class Map extends React.Component {
     );
   }
 }
-export default Map;
+export default test;

@@ -4,6 +4,8 @@ import axios from 'axios';
 import Autocomplete from './Autocomplete.js';
 import logo from './image3.jpeg';
 import Map from './Map.jsx';
+import Test from './test.jsx';
+
 // import logo from './Old-well-banner.jpg';
 // import $ from "jquery";
 //import heroes from './data.js'
@@ -30,6 +32,9 @@ export class cardPage extends React.Component {
       nutAllergy: false,
       veganFriendly: false,
       reviewRating: 1,
+      showMap: false,
+      longitude: 35.9141313,
+      latitude: -79.0558882,
       sum: 0,
       count: 0,
       tempRatings: []
@@ -48,10 +53,12 @@ export class cardPage extends React.Component {
     
   }
  
-    //KEY: AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
 
-  handleGfChange = event => 
+  handleGfChange = event => {
     this.setState({ gf: event.target.checked })
+    this.state.showMap = false;
+  }
+    
     handleKosherChange = event => 
     this.setState({kosher: event.target.checked })
     handleNutChange = event => 
@@ -62,6 +69,7 @@ export class cardPage extends React.Component {
   
 handleFilterChange  = event => {
     event.preventDefault();
+    this.state.showMap = false;
     const hero = this.state.defaultHeroCards
 
     const checkGF = this.state.gf
@@ -140,11 +148,16 @@ setReviewButton(event) {
   this.setState({
     reviewRating: target
   })
+  this.state.showMap = false;
 
 }
+
 handleSearch = event =>{
   // alert("You searched " + Autocomplete.state.activeSuggestion)
-  this.setState({heroCards: {"mong": {
+  var address = this.refs.Autocomplete.state.userInput;
+  console.log(address);
+  if(address === "Ms. Mong"){
+    this.setState({heroCards: {"mong": {
       "count": 0,
       "sum": 0,
       "score": 45,
@@ -160,7 +173,48 @@ handleSearch = event =>{
       "gf": false,
       "nut_friendly": false,
       "vegan": false
-    }}})
+    }}, longitude: 35.9141313, latitude: -79.0558882})
+    this.state.longitude = 35.9141313;
+    this.state.latitude = -79.0558882;
+    this.state.showMap = true;
+ 
+  }
+ 
+ else if(address === "The Pizza Press" ){
+  this.setState({heroCards: {"pizzapress": {
+    "count": 0,
+    "sum": 0,
+    "score": 66,
+    "id": 3,
+    "name": "The Pizza Press",
+    "name2": "pizzapress",
+    "address": "133 W Franklin St Suite 120 Suite 120, Chapel Hill, NC 27516",
+    "hours": "11AM-10PM",
+    "img": "r_icons/pizzapress.png",
+    "color": "black",
+    "backgroundColor": "#DED9D7",
+    "kosher_options": false,
+    "gf": false,
+    "nut_friendly": true,
+    "vegan": false,
+    "place_id": "ChIJX8ix0RHDrIkRLz4z_MQ6SME"
+  }}, longitude: 35.9121788, latitude:-79.0597643})
+  this.state.longitude = 35.9121788;
+  this.state.latitude = -79.0597643;
+  this.state.showMap = true;
+ }
+else if(address === undefined){
+  this.setState({showMap: false})
+  this.state.showMap = false;
+}
+ else{
+   console.log(address)
+  this.state.longitude = parseInt(address.substring(0,2));
+  this.state.latitude = parseInt(address.substring(3,5));
+  this.setState({showMap: true})
+  this.state.showMap = true;
+  
+ }
 }
 handleSubmitReview = event =>{
   event.preventDefault();
@@ -186,9 +240,20 @@ handleSubmitReview = event =>{
 
 
 }
+renderMap(){
+  return(<Map latitude = {this.state.latitude} longitude = {this.state.longitude}/>)
+}
+renderOther(){
+  return(
+   <div>
+
+   </div>
+  )
+}
   render() {
     return (
       <div>
+     
         <div>
         <div  >
   <div >
@@ -226,12 +291,15 @@ handleSubmitReview = event =>{
           "Sup Dogs",
           "Lotsa Stone Fired Pizza"
         ]}
+        ref="Autocomplete"
       />
       
        <button onClick={this.handleSearch}>Go</button>
        </div>
        </div>
+     
        </div>
+      
        <div className = "card" id = "hero">
        {this.renderHeroEditForm()}
        </div>
@@ -244,6 +312,13 @@ handleSubmitReview = event =>{
    
         </div>
     </div>
+    <div className = "moveMap">
+      
+
+    {this.state.showMap === true
+          ? this.renderMap()
+          : this.renderOther()}
+              </div>
 <div className = "spaceUp">
 
 
@@ -256,14 +331,7 @@ handleSubmitReview = event =>{
 <img class="card-img-top" src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
 <div class="card-body">
     <h1 class="card-title title">{this.state.heroCards[key].name}</h1>
-    <p class="card-text">{this.state.heroCards[key].address}<br></br> {this.state.heroCards[key].hours}</p>
-   </div>
-
-
-
-
-
-<form>
+    <p class="card-text">{this.state.heroCards[key].address}<br></br> {this.state.heroCards[key].hours}<form>
           <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].score} max="100" data-text={this.state.heroCards[key].score}>30</progress>
          < div id = "centered">
 <input id = "centered" type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
@@ -275,7 +343,15 @@ handleSubmitReview = event =>{
               <div className ="buttons is-centered">
                 <button onClick = {this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name2} name="submit">Submit Review</button>
               </div>
-      </form>   
+      </form>   </p>
+    
+   </div>
+
+
+
+
+
+
 
  
 </div>
