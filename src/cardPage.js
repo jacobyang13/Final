@@ -26,7 +26,7 @@ export class cardPage extends React.Component {
       nutAllergy: false,
       veganFriendly: false,
       reviewRating: 1,
-      total: 0,
+      sum: 0,
       count: 0,
       tempRatings: []
     };
@@ -232,13 +232,15 @@ handleSubmitReview = event =>{
   
    console.log(this.state.reviewRating)
    console.log(event.target.value)
-     pubRoot.get('/restaurants/' + event.target.value + '/count', )
-      .then(res => {
-       
-    
-        this.setState({count: res.data.result + this.state.reviewRating})
-      
-      })
+  
+      pubRoot.get('/restaurants/'+ event.target.value + '/count')
+    .then(res => {
+        this.setState({count: res.data.result + 1})
+    })
+    pubRoot.get('/restaurants/'+ event.target.value + '/sum')
+    .then(res => {
+        this.setState({sum: res.data.result + this.state.reviewRating})
+    })
 
   pubRoot.post('/restaurants/' + event.target.value + '/count', {
     "data": this.state.count
@@ -249,7 +251,28 @@ handleSubmitReview = event =>{
       console.log(res.data);
      
     })
-
+    pubRoot.post('/restaurants/' + event.target.value + '/sum', {
+      "data": this.state.sum
+   
+    })
+      .then(res => {
+        console.log("posted")
+        console.log(res.data);
+       
+      })
+      pubRoot.post('/restaurants/' + event.target.value + '/score', {
+        "data": this.state.sum / this.state.count
+     
+      })
+        .then(res => {
+          console.log("posted")
+          console.log(res.data);
+         
+        })
+        
+      
+  
+   
  
    //this.getRatings(this.state.reviewRating,event.target.value)
 
@@ -303,19 +326,19 @@ handleSubmitReview = event =>{
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
-   <div  key = {id} id = "formCard" className = "card">
 
-<form  key = {id}>
-          <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].sum} max="100" data-text={this.state.heroCards[key].sum}>30</progress>
+
+<form >
+          <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].score} max="100" data-text={this.state.heroCards[key].score}>30</progress>
          < div >
 <input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
 <input type="radio" onChange={this.setReviewButton.bind(this)} value="2" name="gender" /> 2
 </div>
               <div className ="buttons is-centered">
-                <button onClick ={this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name} name="submit">Submit Review</button>
+                <button onClick ={this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name2} name="submit">Submit Review</button>
               </div>
       </form>   
-      </div>
+ 
 </div>
 </div>
 ))}
