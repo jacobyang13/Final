@@ -117,8 +117,8 @@ handleFilterChange  = event => {
   renderHeroEditForm = () => {
 
     return (
-     <div className = "fullWidth">       
-     <div className="filter">
+     <div id = "fullWidth" className = "card">       
+     <div >
 <div className = "center">
 <strong>Filter Options</strong> <br/>
 
@@ -147,7 +147,7 @@ handleSearch = event =>{
   this.setState({heroCards: {"mong": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 45,
       "id": 5,
       "name": "Ms. Mong",
       "name2": "mong",
@@ -164,16 +164,23 @@ handleSearch = event =>{
 }
 handleSubmitReview = event =>{
   event.preventDefault();
-      privRoot.post('/users/' + event.target.value + '/score', {
-        "data": 95
+  if(event.target.value !== "hibachi"){
+    alert("You are a guest, you need to login to submit reviews")
+  }
+ else{
+
+  pubRoot.post('/restaurants/' + event.target.value + '/score', {
+    "data": 95
+ 
+  })
+    .then(res => {
+      alert("Review Sent!")
+      console.log("posted")
+      console.log(res.data);
      
-      })
-        .then(res => {
-          console.log("posted")
-          console.log(res.data);
-         
-        })
-        
+    })
+    
+ }
       
   
 
@@ -192,11 +199,13 @@ handleSubmitReview = event =>{
 </div>
           
         </div>
-        {this.renderHeroEditForm()}
+      
+      
         <div>
       {/* <h1>React Autocomplete Demo</h1> */}
-      <section className="section">
-      <div className="container">
+      <div id = "fullWidth2" className = "card">
+      <section >
+      <div >
       <h2>Search for a Chapel Hill Restaurant!</h2>
       <Autocomplete  
         suggestions={[
@@ -221,12 +230,15 @@ handleSubmitReview = event =>{
       </div>
       </section>
      
+      </div>
+      <div >
+        {this.renderHeroEditForm()}
+        </div>
     </div>
 
 
 
         {Object.keys(this.state.heroCards).map((key, id) => (
-
 
 <div id = "formCard" className = "card" key={id}> 
 <div id = {this.state.heroCards[key].id}   >

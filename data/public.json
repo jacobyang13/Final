@@ -3,7 +3,7 @@
     "hibachi": {
       "count": 0,
       "sum": 0,
-      "score": 90,
+      "score": 95,
       "id": 0,
       "name": "Hibachi & Co",
       "name2": "hibachi",
@@ -220,6 +220,14 @@
       "gf": true,
       "nut_friendly": true,
       "vegan": false
+    }
+  },
+  "users": {
+    "hibachi": {
+      "score": 95
+    },
+    "chipotle": {
+      "score": 95
     }
   }
 }
