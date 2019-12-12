@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Autocomplete from './Autocomplete.js';
 import logo from './image3.jpeg';
+// import logo from './Old-well-banner.jpg';
 // import $ from "jquery";
 //import heroes from './data.js'
 const pubRoot = new axios.create({
@@ -127,7 +128,7 @@ handleFilterChange  = event => {
 <input className = "k" id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher
 <input className = "n" id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly
 <input className = "v" id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly
-<input className = "cs" onClick={this.handleFilterChange}  type="submit" value="Filter"/>
+<input class="button is-link" onClick={this.handleFilterChange}  type="submit" value="Filter"/>
 </div>
         </div>
     </div>
