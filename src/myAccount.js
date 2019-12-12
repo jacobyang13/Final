@@ -16,7 +16,7 @@ export class myAccount extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        vegan: false,
+        vegan: this.getVegan,
         gf: false,
         nuts: false,
         kosher: false
@@ -28,6 +28,10 @@ export class myAccount extends React.Component {
   
      
   }
+
+//   getVegan = () = => {
+
+//   }
 
   handleDeleteAccount = event => {
     event.preventDefault();
