@@ -1,14 +1,99 @@
 {
-    "restaurants":{
-      "hibachi":{
-        "reviews": [],
-        "rating": []
-      } ,
-      "moes": {
-       "reviews": [],
-       "rating": []
+  "restaurants": {
+    "hibachi": {
+      "reviews": [],
+      "ratings": [
+        "2",
+        "2",
+        "2",
+        "2",
+        "1"
+      ],
+      "avg": 10,
+      "name": "hibachi"
+    },
+    "moes": {
+      "reviews": [],
+      "ratings": [
+        "2",
+        "2",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "2",
+        "2",
+        "1"
+      ],
+      "avg": 0,
+      "name": "moes"
+    },
+    "chipotle": {
+      "reviews": [],
+      "ratings": [
+        4
+      ],
+      "avg": 25
+    },
+    "pizzapress": {
+      "reviews": [],
+      "ratings": [
+        4
+      ],
+      "avg": 25
+    },
+    "banditos": {
+      "reviews": [],
+      "ratings": [
+        4
+      ],
+      "avg": 25
+    },
+    "mong": {
+      "reviews": [],
+      "ratings": [
+        4
+      ],
+      "avg": 25
+    },
+    "suttons": {
+      "reviews": [],
+      "ratings": [
+        4
+      ],
+      "avg": 25
+    },
+    "panera": {
+      "reviews": [],
+      "ratings": [
+        4
+      ],
+      "avg": 25
+    },
+    "chabad": {
+      "reviews": [],
+      "ratings": [
+        4
+      ],
+      "avg": 25
+    },
+    "": {
+      "ratings": [
+        0,
+        1
+      ],
+      "avg": 0
+    },
+    "undefined": {
+      "ratings": [
+        "1",
+        "2"
+      ],
+      "avg": 10
     }
-    }
-  
-   
   }
+}

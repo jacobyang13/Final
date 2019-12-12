@@ -6,6 +6,9 @@ import Autocomplete from './Autocomplete.js';
 const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
 });
+const privRoot = new axios.create({
+  baseURL: "http://localhost:3000/private"
+});
 export class cardPage extends React.Component {
   constructor(props) {
     super(props);
@@ -22,8 +25,9 @@ export class cardPage extends React.Component {
       kosher: false,
       nutAllergy: false,
       veganFriendly: false,
-      reviewRating: 0,
+      reviewRating: 1,
       avg: 0,
+      tempRatings: []
     };
 
   }
@@ -36,6 +40,7 @@ export class cardPage extends React.Component {
         defaultHeroCards: res.data.result
       })
     })
+    
   }
   getRatings = (count, sum) =>{
     // var num = 0;
@@ -134,7 +139,7 @@ handleFilterChange  = event => {
   renderHeroEditForm = () => {
 
     return (
-     <div>
+     <div className = "fullWidth">
 
        {/* <div class="field" id="searchbar">
         <div class ="control">
@@ -153,30 +158,103 @@ handleFilterChange  = event => {
        
        
      <div className="filter">
-
-<span className = "title">Filter Options</span> <br/>
+<div className = "center">
+<span >Filter Options</span> <br/>
 
 <input id = "gf" type="checkbox" checked={this.state.gf} onChange={this.handleGfChange} />Gluten Free Options<br/>
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
-<input onClick={this.handleFilterChange} class="button is-warning is-light" type="submit" value="Filter"/>
+<input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
+</div>
         </div>
     </div>
             )
 };
+call = ()=>{
+  
+}
+getRatings = (rating,name) =>{
+  console.log(name)
+  
+  privRoot.get('/restaurants/' + name + '/ratings',)
+  .then(res => {
+    console.log("get Rating")
+    console.log(res.data.results)
+    this.setState({tempRatings: res.data.result})
+  })
+
+  var num = 0;
+  var den = this.state.tempRatings.length;
+  for(var i = 0; i < this.state.tempRatings.length; i++){
+    if(this.state.tempRatings[i] == 1){
+      num += 0;
+    }
+    else if(this.state.tempRatings[i] == 2){
+      num+= 25;
+    }
+    else if(this.state.tempRatings[i] == 3){
+      num+= 50;
+    }
+    else if(this.state.tempRatings[i] == 4){
+      num+= 75;
+    }
+    else if(this.state.tempRatings[i] == 5){
+      num+= 100;
+    }
+  }
+  const avg = Math.round(num/den); 
+  console.log("calculated")
+  console.log(avg)
+  privRoot.post('/restaurants/' + name + '/avg', {
+    "data": avg,
+  })
+    .then(res => {
+      console.log("posted")
+      console.log(res);
+      console.log(res.data);
+     
+    })
+
+}
 setReviewButton(event) {
-  this.setState({reviewRating: parseInt(event.target.value,10)})
+  //console.log(event.target.value)
+  event.preventDefault();
+  var target = event.target.value
+  this.setState({
+    reviewRating: target
+  })
+
 }
 handleSubmitReview = event =>{
   event.preventDefault();
   
-  console.log(this.state.reviewRating)
-  this.setState({
-    ratings: this.state.ratings.concat(this.state.reviewRating)
+   console.log(this.state.reviewRating)
+   console.log(event.target.value)
+   var tempArray =[]
+     privRoot.get('/restaurants/' + event.target.value + '/ratings', )
+      .then(res => {
+       
+      
+        tempArray = res.data.result;
+        tempArray.push(this.state.reviewRating)
+        this.setState({tempRatings: tempArray})
+      
+      })
+
+  privRoot.post('/restaurants/' + event.target.value + '/ratings', {
+    "data": this.state.tempRatings
+ 
   })
-  this.getRatings(this.state.ratings)
- console.log(this.state.ratings)
+    .then(res => {
+      console.log("posted")
+      console.log(res.data);
+     
+    })
+    this.setState({tempRatings: []})
+ 
+   //this.getRatings(this.state.reviewRating,event.target.value)
+
 }
   render() {
     return (
@@ -184,8 +262,9 @@ handleSubmitReview = event =>{
         <div>
         <div className="card" >
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <div className = "card-text">{this.state.guest === false ? <span>You are a guest</span> : <span></span>}</div>
+    <div className = "card-text"> <h1 id = "center">{this.state.guest === true ? <span>You are a guest, please login
+      to gain full access
+    </span> : <span>You are logged in</span>}</h1></div>
   </div>
 </div>
           
@@ -193,8 +272,8 @@ handleSubmitReview = event =>{
         {this.renderHeroEditForm()}
         <div>
       {/* <h1>React Autocomplete Demo</h1> */}
-      <section class="section">
-      <div class="container">
+      <section className="section">
+      <div className="container">
       <h2>Start typing and experience the autocomplete wizardry!</h2>
       <Autocomplete
         suggestions={[
@@ -217,8 +296,8 @@ handleSubmitReview = event =>{
         {Object.keys(this.state.heroCards).map((key, id) => (
 
 
-<div  key={id}> 
-<div id = {this.state.heroCards[key].id}  className = "result" >
+<div id = "formCard" className = "card" key={id}> 
+<div id = {this.state.heroCards[key].id}   >
    
    <h1 className = "title" >{this.state.heroCards[key].name}</h1>
    <br/>
@@ -226,29 +305,24 @@ handleSubmitReview = event =>{
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
-        <form>
-                  <span>Ratings:</span><progress className="progress is-info" value={this.state.avg} max="100" data-text={this.state.avg}>30</progress>
-                  <p onChange={this.setReviewButton.bind(this)} className= "button is-primary is-centered" id = {this.state.heroCards[key].id}>
-          
-                      <input id="r1" type="radio" name="star" value="1"></input><label htmlFor="r1">1&#9733;</label>
-                      <input id="r2" type="radio" name="star" value="2"></input><label htmlFor="r2">2&#9733;</label>
-                      <input id="r3" type="radio" name="star" value="3"></input><label htmlFor="r3">3&#9733;</label>
-                      <input id="r4" type="radio" name="star" value="4"></input><label htmlFor="r4">4&#9733;</label>
-                      <input id="r5" type="radio" name="star" value="5"></input><label htmlFor="r5">5&#9733;</label><br></br>
-                  
-                  </p>
-                      <div className ="buttons is-centered">
-                        <button onClick={this.handleSubmitReview} className = "button is-link is-centered" type={this.state.heroCards[key].id} value="Submit Review" name="submit">Submit Review</button>
-                      </div>
-              </form>   
-</div>
-</div>
-       
+   <div  key = {id} id = "formCard" className = "card">
 
-
-))}
-      
+<form  key = {id}>
+          <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].avg} max="100" data-text={this.state.heroCards[key].avg}>30</progress>
+         < div >
+<input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
+<input type="radio" onChange={this.setReviewButton.bind(this)} value="2" name="gender" /> 2
+</div>
+              <div className ="buttons is-centered">
+                <button onClick ={this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name} name="submit">Submit Review</button>
+              </div>
+      </form>   
       </div>
+</div>
+</div>
+))}
+  </div>
+  
     )
   }
   
