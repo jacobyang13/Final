@@ -41,6 +41,27 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "test": {
+      "passwordHash": "$2b$10$A28vAlP35olelR63lL60Y.KaPtftLY9IFw.sNOU.RlnBcPJxl0t7y",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "new": {
+      "passwordHash": "$2b$10$XoDPU2jG2ZEMURRaKaLxUeb1PE/oWnA6K1yL0V6z6V9CdR/J5jG.2",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "s": {
+      "passwordHash": "$2b$10$oE2yrAtayPTijYzQplf0CewsnjT1WMOqs0xZU.tSXotcrWm6nUq.K",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }

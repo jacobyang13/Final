@@ -63,6 +63,7 @@ export class cardPage extends React.Component {
   handleViewMap = () => {
     console.log("hi");
     return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
+    // AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
   }
 
   handleGfChange = event => 
@@ -157,7 +158,7 @@ handleFilterChange  = event => {
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
-<input onClick={this.handleFilterChange} className = "s" type="submit" value="Filter"/>
+<input onClick={this.handleFilterChange} class="button is-warning is-light" type="submit" value="Filter"/>
         </div>
     </div>
             )
@@ -189,7 +190,9 @@ handleSubmitReview = event =>{
         </div>
         {this.renderHeroEditForm()}
         <div>
-      <h1>React Autocomplete Demo</h1>
+      {/* <h1>React Autocomplete Demo</h1> */}
+      <section class="section">
+      <div class="container">
       <h2>Start typing and experience the autocomplete wizardry!</h2>
       <Autocomplete
         suggestions={[
@@ -205,7 +208,10 @@ handleSubmitReview = event =>{
           "Wetlands"
         ]}
       />
+      </div>
+      </section>
     </div>
+
         {Object.keys(this.state.heroCards).map((key, id) => (
 
 
