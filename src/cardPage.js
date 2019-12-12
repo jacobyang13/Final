@@ -4,6 +4,7 @@ import axios from 'axios';
 import Autocomplete from './Autocomplete.js';
 import logo from './image3.jpeg';
 import Map from './Map.jsx';
+// import logo from './Old-well-banner.jpg';
 // import $ from "jquery";
 //import heroes from './data.js'
 const pubRoot = new axios.create({
@@ -47,11 +48,7 @@ export class cardPage extends React.Component {
     
   }
  
-  handleViewMap = () => {
-    console.log("hi");
-    return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
-    // AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
-  }
+    //KEY: AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
 
   handleGfChange = event => 
     this.setState({ gf: event.target.checked })
@@ -128,7 +125,7 @@ handleFilterChange  = event => {
 <input className = "k" id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher
 <input className = "n" id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly
 <input className = "v" id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly
-<input className = "cs" onClick={this.handleFilterChange}  type="submit" value="Filter"/>
+<input class="button is-link" onClick={this.handleFilterChange}  type="submit" value="Filter"/>
 </div>
         </div>
     </div>
@@ -203,7 +200,7 @@ handleSubmitReview = event =>{
 </div>
           
         </div>
-      <Map/>
+     
       
         <div>
       {/* <h1>React Autocomplete Demo</h1> */}
@@ -264,7 +261,9 @@ handleSubmitReview = event =>{
 
 
 
-<form >
+
+
+<form>
           <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].score} max="100" data-text={this.state.heroCards[key].score}>30</progress>
          < div id = "centered">
 <input id = "centered" type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
@@ -277,6 +276,7 @@ handleSubmitReview = event =>{
                 <button onClick = {this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name2} name="submit">Submit Review</button>
               </div>
       </form>   
+
  
 </div>
 </div>
@@ -287,5 +287,7 @@ handleSubmitReview = event =>{
   }
   
 }
+
+
 
 export default cardPage;

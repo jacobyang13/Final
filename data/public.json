@@ -15,7 +15,9 @@
       "kosher_options": false,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJgV4ZWt3CrIkR5uEDvo7NPC4",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgV4ZWt3CrIkR5uEDvo7NPC4&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "moes": {
       "count": 0,
@@ -32,7 +34,9 @@
       "kosher_options": false,
       "gf": false,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJd418cOfCrIkRQWRqGpPWuC4",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJd418cOfCrIkRQWRqGpPWuC4&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "chipotle": {
       "count": 0,
@@ -49,7 +53,9 @@
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJe0vj2eDCrIkRTPg2QjWU5bo",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJe0vj2eDCrIkRTPg2QjWU5bo&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "pizzapress": {
       "count": 0,
@@ -66,7 +72,9 @@
       "kosher_options": false,
       "gf": false,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJX8ix0RHDrIkRLz4z_MQ6SME",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX8ix0RHDrIkRLz4z_MQ6SME&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "banditos": {
       "count": 0,
@@ -83,7 +91,9 @@
       "kosher_options": false,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJ58jMUN3CrIkR5OTI3fAyLys",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ58jMUN3CrIkR5OTI3fAyLys&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "mong": {
       "count": 0,
@@ -100,7 +110,9 @@
       "kosher_options": false,
       "gf": false,
       "nut_friendly": false,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJIUe_Wd3CrIkRB3vcwAJNA0g",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJIUe_Wd3CrIkRB3vcwAJNA0g&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "suttons": {
       "count": 0,
@@ -117,7 +129,9 @@
       "kosher_options": false,
       "gf": false,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJ58jMUN3CrIkRdMC-eBDRdMw",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ58jMUN3CrIkRdMC-eBDRdMw&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "panera": {
       "count": 0,
@@ -134,7 +148,9 @@
       "kosher_options": false,
       "gf": false,
       "nut_friendly": false,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJVSaLMOfCrIkRilzaML7NVuw",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVSaLMOfCrIkRilzaML7NVuw&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "chabad": {
       "count": 0,
@@ -143,7 +159,7 @@
       "id": 8,
       "name": "Chabad House",
       "name2": "chabad",
-      "address": "Somewhere on Malette St.",
+      "address": "127 Mallette St, Chapel Hill, NC 27516",
       "hours": "Fridays 6PM-9PM",
       "img": "r_icons/chabad.jpg",
       "color": "black",
@@ -151,7 +167,9 @@
       "kosher_options": true,
       "gf": false,
       "nut_friendly": true,
-      "vegan": true
+      "vegan": true,
+      "place_id": "ChIJdVhkyObCrIkRvPcIjFlowDk",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJdVhkyObCrIkRvPcIjFlowDk&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "cosmic": {
       "count": 0,
@@ -168,7 +186,9 @@
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": true
+      "vegan": true,
+      "place_id": "ChIJvYoBi-fCrIkRuDwOLIfngCk",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvYoBi-fCrIkRuDwOLIfngCk&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "cp": {
       "count": 0,
@@ -185,7 +205,9 @@
       "kosher_options": true,
       "gf": false,
       "nut_friendly": false,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJGTu4JnbDrIkRPCy4rp6agXA",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJGTu4JnbDrIkRPCy4rp6agXA&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "sup_dogs": {
       "count": 0,
@@ -202,7 +224,9 @@
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJbawAh-fCrIkRF2-ZM0tdrcw",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbawAh-fCrIkRF2-ZM0tdrcw&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     },
     "lotsa": {
       "count": 0,
@@ -219,7 +243,9 @@
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false
+      "vegan": false,
+      "place_id": "ChIJZcdveOfCrIkRuds9bsx8gzs",
+      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZcdveOfCrIkRuds9bsx8gzs&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
     }
   },
   "users": {
