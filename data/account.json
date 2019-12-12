@@ -62,6 +62,13 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "ab": {
+      "passwordHash": "$2b$10$eTQKL.se6sfMmGlR.VTQFewaCUQRKajiMiqx7UhkC500urf7JMy4.",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }

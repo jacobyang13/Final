@@ -7,7 +7,7 @@ const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
 });
 const privRoot = new axios.create({
-  baseURL: "http://localhost:3000/private"
+  baseURL: "http://localhost:3000/user"
 });
 export class cardPage extends React.Component {
   constructor(props) {
@@ -43,31 +43,7 @@ export class cardPage extends React.Component {
     })
     
   }
-  getRatings = (count, sum) =>{
-    // var num = 0;
-    // var den = ratings.length;
-    let result = 0;
-    // for(var i = 0; i < count; i++){
-    //   // if(ratings[i] == 1){
-    //   //   num += 0;
-    //   // }
-    //   // else if(ratings[i] == 2){
-    //   //   num+= 25;
-    //   // }
-    //   // else if(ratings[i] == 3){
-    //   //   num+= 50;
-    //   // }
-    //   // else if(ratings[i] == 4){
-    //   //   num+= 75;
-    //   // }
-    //   // else if(ratings[i] == 5){
-    //   //   num+= 100;
-    //   // }
-    // }
-     result = Math.round(sum/count); 
-     result = result * 20;
-    this.setState({avg:result});
-  }
+ 
   handleViewMap = () => {
     console.log("hi");
     return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
@@ -140,24 +116,7 @@ handleFilterChange  = event => {
   renderHeroEditForm = () => {
 
     return (
-     <div className = "fullWidth">
-
-       {/* <div class="field" id="searchbar">
-        <div class ="control">
-        <input class="input is-primary" type="text" placeholder="Search For Restaurants Here"></input>
-        </div>
-       </div>
-
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete">
-    <input id="myInput" type="text" name="myCountry" placeholder="Country"></input>
-  </div>
-  <input type="submit"></input>
-</form> */}
-
-
-       
-       
+     <div className = "fullWidth">       
      <div className="filter">
 <div className = "center">
 <span >Filter Options</span> <br/>
@@ -172,52 +131,8 @@ handleFilterChange  = event => {
     </div>
             )
 };
-call = ()=>{
-  
-}
-getRatings = (rating,name) =>{
-  console.log(name)
-  
-  privRoot.get('/restaurants/' + name + '/ratings',)
-  .then(res => {
-    console.log("get Rating")
-    console.log(res.data.results)
-    this.setState({tempRatings: res.data.result})
-  })
 
-  var num = 0;
-  var den = this.state.tempRatings.length;
-  for(var i = 0; i < this.state.tempRatings.length; i++){
-    if(this.state.tempRatings[i] == 1){
-      num += 0;
-    }
-    else if(this.state.tempRatings[i] == 2){
-      num+= 25;
-    }
-    else if(this.state.tempRatings[i] == 3){
-      num+= 50;
-    }
-    else if(this.state.tempRatings[i] == 4){
-      num+= 75;
-    }
-    else if(this.state.tempRatings[i] == 5){
-      num+= 100;
-    }
-  }
-  const avg = Math.round(num/den); 
-  console.log("calculated")
-  console.log(avg)
-  privRoot.post('/restaurants/' + name + '/avg', {
-    "data": avg,
-  })
-    .then(res => {
-      console.log("posted")
-      console.log(res);
-      console.log(res.data);
-     
-    })
 
-}
 setReviewButton(event) {
   //console.log(event.target.value)
   event.preventDefault();
@@ -227,41 +142,11 @@ setReviewButton(event) {
   })
 
 }
+
 handleSubmitReview = event =>{
   event.preventDefault();
-  
-   console.log(this.state.reviewRating)
-   console.log(event.target.value)
-  
-      pubRoot.get('/restaurants/'+ event.target.value + '/count')
-    .then(res => {
-        this.setState({count: res.data.result + 1})
-    })
-    pubRoot.get('/restaurants/'+ event.target.value + '/sum')
-    .then(res => {
-        this.setState({sum: res.data.result + this.state.reviewRating})
-    })
-
-  pubRoot.post('/restaurants/' + event.target.value + '/count', {
-    "data": this.state.count
- 
-  })
-    .then(res => {
-      console.log("posted")
-      console.log(res.data);
-     
-    })
-    pubRoot.post('/restaurants/' + event.target.value + '/sum', {
-      "data": this.state.sum
-   
-    })
-      .then(res => {
-        console.log("posted")
-        console.log(res.data);
-       
-      })
-      pubRoot.post('/restaurants/' + event.target.value + '/score', {
-        "data": this.state.sum / this.state.count
+      privRoot.post('/users/' + event.target.value + '/score', {
+        "data": 95
      
       })
         .then(res => {
@@ -272,9 +157,7 @@ handleSubmitReview = event =>{
         
       
   
-   
- 
-   //this.getRatings(this.state.reviewRating,event.target.value)
+
 
 }
   render() {
@@ -333,9 +216,12 @@ handleSubmitReview = event =>{
          < div >
 <input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
 <input type="radio" onChange={this.setReviewButton.bind(this)} value="2" name="gender" /> 2
+<input type="radio" onChange={this.setReviewButton.bind(this)} value="3" name="gender" /> 3
+<input type="radio" onChange={this.setReviewButton.bind(this)} value="4" name="gender" /> 4
+<input type="radio" onChange={this.setReviewButton.bind(this)} value="5" name="gender" /> 5
 </div>
               <div className ="buttons is-centered">
-                <button onClick ={this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name2} name="submit">Submit Review</button>
+                <button onClick = {this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name2} name="submit">Submit Review</button>
               </div>
       </form>   
  

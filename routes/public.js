@@ -24,13 +24,19 @@ router.get('/*', parseGet, function (req, res) {
     res.send({result})
   }
 });
+router.post('/*', parsePost, function (req, res) {
+  const result = req.handlePost(publicStore);
+  if (typeof result !== 'undefined') {
+    res.send({result})
+  }
+});
 
-// router.delete('/*', parseDelete, function (req, res) {
-//   const result = req.handleDelete(publicStore);
-//   if (typeof result !== 'undefined') {
-//     res.send({result})
-//   }
-// });
+router.delete('/*', parseDelete, function (req, res) {
+  const result = req.handleDelete(publicStore);
+  if (typeof result !== 'undefined') {
+    res.send({result})
+  }
+});
 // router.get('/hello', function (req, res) {  
 //   res.send({message: "This is working!"})  
 // });
