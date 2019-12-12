@@ -40,19 +40,13 @@ export class cardPage extends React.Component {
         defaultHeroCards: res.data.result
       })
     })
-    privRoot.get('/restaurants')
-    .then(res => {
-      console.log(res.data.result)
-      this.setState({
-        ratings: res.data.result
-      })
-    })
     
   }
 
   handleViewMap = () => {
     console.log("hi");
     return (<iframe width="600" height="450" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=35.9141,-79.0540&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk" allowfullscreen></iframe>)
+    // AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
   }
 
   handleGfChange = event => 
@@ -253,8 +247,9 @@ handleSubmitReview = event =>{
         </div>
         {this.renderHeroEditForm()}
         <div>
-          <div className = "card">
-      <h1>React Autocomplete Demo</h1>
+      {/* <h1>React Autocomplete Demo</h1> */}
+      <section className="section">
+      <div className="container">
       <h2>Start typing and experience the autocomplete wizardry!</h2>
       <Autocomplete
         suggestions={[
@@ -271,10 +266,9 @@ handleSubmitReview = event =>{
         ]}
       />
       </div>
+      </section>
     </div>
-    <div className = "result">
 
-  
         {Object.keys(this.state.heroCards).map((key, id) => (
 
 
@@ -287,30 +281,24 @@ handleSubmitReview = event =>{
    <p > {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
-        
-</div>
-</div>
-))}
-  </div>
-<div className = "result2">
-      {Object.keys(this.state.ratings).map((key, id) => (
+   <div  key = {id} id = "formCard" className = "card">
 
-<div  key = {id} id = "formCard" className = "card">
-
-        <form  key = {id}>
-                  <span>Ratings:</span><progress className="progress is-info" value={this.state.ratings[key].avg} max="100" data-text={this.state.ratings[key].avg}>30</progress>
-                 < div >
-    <input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
-    <input type="radio" onChange={this.setReviewButton.bind(this)} value="2" name="gender" /> 2
-  </div>
-                      <div className ="buttons is-centered">
-                        <button onClick ={this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.ratings[key].name} value={this.state.ratings[key].name} name="submit">Submit Review</button>
-                      </div>
-              </form>   
+<form  key = {id}>
+          <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].avg} max="100" data-text={this.state.heroCards[key].avg}>30</progress>
+         < div >
+<input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
+<input type="radio" onChange={this.setReviewButton.bind(this)} value="2" name="gender" /> 2
+</div>
+              <div className ="buttons is-centered">
+                <button onClick ={this.handleSubmitReview.bind(this)}  className = "button is-link is-centered" type={this.state.heroCards[key].name} value={this.state.heroCards[key].name} name="submit">Submit Review</button>
               </div>
-))}
-</div>
+      </form>   
       </div>
+</div>
+</div>
+))}
+  </div>
+  
     )
   }
   

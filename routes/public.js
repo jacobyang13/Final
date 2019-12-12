@@ -17,7 +17,7 @@ router.get('/examplePost/authors', parseGet, function (req, res) {
   }
 });
 
-router.get('/restaurants', parseGet, function (req, res) {
+router.get('/*', parseGet, function (req, res) {
   const result = req.handleGet(publicStore);
   if (typeof result !== 'undefined') {
     console.log(result);

@@ -60,6 +60,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+
 }
 .s{
     color: red;
@@ -72,13 +73,13 @@
     margin-right: auto;
     padding: 2em 1em;
     border-radius: 8px;
-    /* overflow: hidden; */
+    overflow: hidden;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
     background-color: rgba(218, 194, 218, 0.842);
   }
 
   #criteria{
-      background-color: peachpuff;
+      background-color: rgb(240, 236, 232);
   }
 
   #root {
