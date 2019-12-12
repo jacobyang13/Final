@@ -46,6 +46,10 @@
 #search{
   font-size: 18px;
 }
+.map {
+  width: 100vw;
+  min-height: 50vh;
+}
 #fullWidth2{
   padding-top: 10px;
   padding-left:10px;

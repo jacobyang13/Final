@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Autocomplete from './Autocomplete.js';
 import logo from './image3.jpeg';
+import Map from './Map.jsx';
 // import $ from "jquery";
 //import heroes from './data.js'
 const pubRoot = new axios.create({
@@ -202,7 +203,7 @@ handleSubmitReview = event =>{
 </div>
           
         </div>
-      
+      <Map/>
       
         <div>
       {/* <h1>React Autocomplete Demo</h1> */}
