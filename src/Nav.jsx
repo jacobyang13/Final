@@ -13,8 +13,11 @@ function Nav() {
   </button>
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav">
-      <li className="nav-item active">
-        <a id= "home" className="nav-link" tabIndex="1" href="#">Home <span className="sr-only">(current)</span></a>
+      <li className="nav-item">
+        <a id= "home" className="nav-link" tabIndex="1" href="#1">Home <span className="sr-only">(current)</span></a>
+      </li>
+      <li className="nav-item">
+        <a id= "home" className="nav-link" tabIndex="2" href="/myAccount">myAccount <span className="sr-only">(current)</span></a>
       </li>
   
       {/* <li className="nav-item">

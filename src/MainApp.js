@@ -117,23 +117,6 @@ export class MainApp extends React.Component {
       
   }
 
-  handleStorePrefs = event => {
-  
-    event.preventDefault();
-
-    userRoot.get('/users/data', {
-       
-      })
-        .then(res => {
-          alert("Prefs Stored");
-          // this.setState({newAccount: false});
-          console.log(res);
-          console.log(res.data);
-        })
-
-      
-  }
-
   
   
   handleSubmit = event => {

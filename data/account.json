@@ -83,6 +83,20 @@
         "role": 2,
         "description": "New User"
       }
+    },
+    "jyy1": {
+      "passwordHash": "$2b$10$dagMAyyth0DHnunFTWDFU.1BTu9Wu0ltYYIZG7EdGc5spFbIz2wde",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
+    },
+    "a": {
+      "passwordHash": "$2b$10$2E8D07ltrF0HZReg1h5rmuWxcU0CMOBw/JNcUcEXwa7I3nEhthrem",
+      "data": {
+        "role": 2,
+        "description": "New User"
+      }
     }
   }
 }
