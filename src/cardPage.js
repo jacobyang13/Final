@@ -26,7 +26,8 @@ export class cardPage extends React.Component {
       nutAllergy: false,
       veganFriendly: false,
       reviewRating: 1,
-      avg: 0,
+      total: 0,
+      count: 0,
       tempRatings: []
     };
 
@@ -207,19 +208,16 @@ handleSubmitReview = event =>{
   
    console.log(this.state.reviewRating)
    console.log(event.target.value)
-   var tempArray =[]
-     privRoot.get('/restaurants/' + event.target.value + '/ratings', )
+     pubRoot.get('/restaurants/' + event.target.value + '/count', )
       .then(res => {
        
-      
-        tempArray = res.data.result;
-        tempArray.push(this.state.reviewRating)
-        this.setState({tempRatings: tempArray})
+    
+        this.setState({count: res.data.result + this.state.reviewRating})
       
       })
 
-  privRoot.post('/restaurants/' + event.target.value + '/ratings', {
-    "data": this.state.tempRatings
+  pubRoot.post('/restaurants/' + event.target.value + '/count', {
+    "data": this.state.count
  
   })
     .then(res => {
@@ -227,7 +225,7 @@ handleSubmitReview = event =>{
       console.log(res.data);
      
     })
-    this.setState({tempRatings: []})
+
  
    //this.getRatings(this.state.reviewRating,event.target.value)
 
@@ -284,7 +282,7 @@ handleSubmitReview = event =>{
    <div  key = {id} id = "formCard" className = "card">
 
 <form  key = {id}>
-          <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].avg} max="100" data-text={this.state.heroCards[key].avg}>30</progress>
+          <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].sum} max="100" data-text={this.state.heroCards[key].sum}>30</progress>
          < div >
 <input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
 <input type="radio" onChange={this.setReviewButton.bind(this)} value="2" name="gender" /> 2
