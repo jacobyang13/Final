@@ -47,7 +47,6 @@ export class cardPage extends React.Component {
     
   }
  
-    //KEY: AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk
 
   handleGfChange = event => 
     this.setState({ gf: event.target.checked })
@@ -257,9 +256,6 @@ handleSubmitReview = event =>{
     <h1 class="card-title title">{this.state.heroCards[key].name}</h1>
     <p class="card-text">{this.state.heroCards[key].address}<br></br> {this.state.heroCards[key].hours}</p>
    </div>
-
-
-   <iframe width="600" height="450" frameborder="0" /*style="border:0"*/ src={this.state.heroCards[key].src} allowfullscreen></iframe>
 
 
 <form>

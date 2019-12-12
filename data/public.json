@@ -15,9 +15,7 @@
       "kosher_options": false,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJgV4ZWt3CrIkR5uEDvo7NPC4",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgV4ZWt3CrIkR5uEDvo7NPC4&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "moes": {
       "count": 0,
@@ -27,16 +25,14 @@
       "name": "Moe's Southwest Grill",
       "name2": "moes",
       "address": "110 W Franklin St, Chapel Hill, NC 27516",
-      "hours": "11AM-8PM",
+      "hours": "11AM-10PM",
       "img": "r_icons/moes.png",
       "color": "black",
       "backgroundColor": "#B4F9BB",
       "kosher_options": false,
       "gf": false,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJd418cOfCrIkRQWRqGpPWuC4",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJd418cOfCrIkRQWRqGpPWuC4&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "chipotle": {
       "count": 0,
@@ -53,9 +49,7 @@
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJe0vj2eDCrIkRTPg2QjWU5bo",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJe0vj2eDCrIkRTPg2QjWU5bo&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "pizzapress": {
       "count": 0,
@@ -72,9 +66,7 @@
       "kosher_options": false,
       "gf": false,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJX8ix0RHDrIkRLz4z_MQ6SME",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX8ix0RHDrIkRLz4z_MQ6SME&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "banditos": {
       "count": 0,
@@ -84,16 +76,14 @@
       "name": "Bandito's Mexican Cafe",
       "name2": "banditos",
       "address": "159 1/2 E Franklin St, Chapel Hill, NC 27514",
-      "hours": "11AM-9:30PM",
+      "hours": "11AM-10PM",
       "img": "r_icons/banditos.jpg",
       "color": "black",
       "backgroundColor": "#F8F9B4",
       "kosher_options": false,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJ58jMUN3CrIkR5OTI3fAyLys",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ58jMUN3CrIkR5OTI3fAyLys&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "mong": {
       "count": 0,
@@ -103,16 +93,14 @@
       "name": "Ms. Mong",
       "name2": "mong",
       "address": "163 E Franklin St, Chapel Hill, NC 27514",
-      "hours": "11AM-9PM",
+      "hours": "11AM-10PM",
       "img": "r_icons/mong.png",
       "color": "black",
       "backgroundColor": "#B8B4F9",
       "kosher_options": false,
       "gf": false,
       "nut_friendly": false,
-      "vegan": false,
-      "place_id": "ChIJIUe_Wd3CrIkRB3vcwAJNA0g",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJIUe_Wd3CrIkRB3vcwAJNA0g&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "suttons": {
       "count": 0,
@@ -122,16 +110,14 @@
       "name": "Sutton's Drug Store",
       "name2": "suttons",
       "address": "159 E Franklin St, Chapel Hill, NC 27514",
-      "hours": "7AM-6:30PM",
+      "hours": "11AM-10PM",
       "img": "r_icons/suttons.jpg",
       "color": "black",
       "backgroundColor": "#E2B4F9",
       "kosher_options": false,
       "gf": false,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJ58jMUN3CrIkRdMC-eBDRdMw",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ58jMUN3CrIkRdMC-eBDRdMw&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "panera": {
       "count": 0,
@@ -141,16 +127,14 @@
       "name": "Panera Bread",
       "name2": "panera",
       "address": "213 W Franklin St, Chapel Hill, NC 27516",
-      "hours": "6AM-9:30PM",
+      "hours": "11AM-10PM",
       "img": "r_icons/panera.png",
       "color": "black",
       "backgroundColor": "#F9D9B4 ",
       "kosher_options": false,
       "gf": false,
       "nut_friendly": false,
-      "vegan": false,
-      "place_id": "ChIJVSaLMOfCrIkRilzaML7NVuw",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVSaLMOfCrIkRilzaML7NVuw&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "chabad": {
       "count": 0,
@@ -159,17 +143,15 @@
       "id": 8,
       "name": "Chabad House",
       "name2": "chabad",
-      "address": "127 Mallette St, Chapel Hill, NC 27516",
-      "hours": "Fridays 6PM-9PM",
+      "address": "Somewhere on Malette St.",
+      "hours": "11AM-10PM",
       "img": "r_icons/chabad.jpg",
       "color": "black",
       "backgroundColor": "#B4E6F9",
       "kosher_options": true,
       "gf": false,
       "nut_friendly": true,
-      "vegan": true,
-      "place_id": "ChIJdVhkyObCrIkRvPcIjFlowDk",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJdVhkyObCrIkRvPcIjFlowDk&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": true
     },
     "cosmic": {
       "count": 0,
@@ -178,17 +160,15 @@
       "id": 9,
       "name": "Cosmic Cantina",
       "name2": "cosmic",
-      "address": "128 E Franklin St, Chapel Hill, NC 27514",
-      "hours": "11AM-4AM",
+      "address": "Franklin St.",
+      "hours": "11AM-10PM",
       "img": "r_icons/restaurant_cosmic.jpg",
       "color": "black",
       "backgroundColor": "#B4E6F9",
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": true,
-      "place_id": "ChIJvYoBi-fCrIkRuDwOLIfngCk",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvYoBi-fCrIkRuDwOLIfngCk&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": true
     },
     "cp": {
       "count": 0,
@@ -197,7 +177,7 @@
       "id": 10,
       "name": "Curry Point Express",
       "name2": "cp",
-      "address": "118 E Franklin St, Chapel Hill, NC 27514",
+      "address": "Franklin St.",
       "hours": "11AM-10PM",
       "img": "r_icons/curry_point.png",
       "color": "black",
@@ -205,9 +185,7 @@
       "kosher_options": true,
       "gf": false,
       "nut_friendly": false,
-      "vegan": false,
-      "place_id": "ChIJGTu4JnbDrIkRPCy4rp6agXA",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJGTu4JnbDrIkRPCy4rp6agXA&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "sup_dogs": {
       "count": 0,
@@ -216,17 +194,15 @@
       "id": 11,
       "name": "Sup Dogs",
       "name2": "sup_dogs",
-      "address": "107 E Franklin St, Chapel Hill, NC 27514",
-      "hours": "11AM-3AM",
+      "address": "Franklin St.",
+      "hours": "11AM-10PM",
       "img": "r_icons/sup_dogs.png",
       "color": "black",
       "backgroundColor": "#B4E6F9",
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJbawAh-fCrIkRF2-ZM0tdrcw",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbawAh-fCrIkRF2-ZM0tdrcw&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     },
     "lotsa": {
       "count": 0,
@@ -235,17 +211,15 @@
       "id": 12,
       "name": "Lotsa Stone Fired Pizza",
       "name2": "lotsa",
-      "address": "100 W Franklin St, Chapel Hill, NC 27516",
-      "hours": "11AM-3AM",
+      "address": "Franklin St.",
+      "hours": "11AM-10PM",
       "img": "r_icons/lotsa.jpg",
       "color": "black",
       "backgroundColor": "#B4E6F9",
       "kosher_options": true,
       "gf": true,
       "nut_friendly": true,
-      "vegan": false,
-      "place_id": "ChIJZcdveOfCrIkRuds9bsx8gzs",
-      "src": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZcdveOfCrIkRuds9bsx8gzs&key=AIzaSyBD2pY0bUHkG05T6jCfQCa04QGomHQmtpk"
+      "vegan": false
     }
   },
   "users": {
