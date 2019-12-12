@@ -37,28 +37,30 @@ export class cardPage extends React.Component {
       })
     })
   }
-  getRatings = (ratings) =>{
-    var num = 0;
-    var den = ratings.length;
-    for(var i = 0; i < ratings.length; i++){
-      if(ratings[i] == 1){
-        num += 0;
-      }
-      else if(ratings[i] == 2){
-        num+= 25;
-      }
-      else if(ratings[i] == 3){
-        num+= 50;
-      }
-      else if(ratings[i] == 4){
-        num+= 75;
-      }
-      else if(ratings[i] == 5){
-        num+= 100;
-      }
-    }
-    var avg = Math.round(num/den); 
-    this.setState({avg:avg});
+  getRatings = (count, sum) =>{
+    // var num = 0;
+    // var den = ratings.length;
+    let result = 0;
+    // for(var i = 0; i < count; i++){
+    //   // if(ratings[i] == 1){
+    //   //   num += 0;
+    //   // }
+    //   // else if(ratings[i] == 2){
+    //   //   num+= 25;
+    //   // }
+    //   // else if(ratings[i] == 3){
+    //   //   num+= 50;
+    //   // }
+    //   // else if(ratings[i] == 4){
+    //   //   num+= 75;
+    //   // }
+    //   // else if(ratings[i] == 5){
+    //   //   num+= 100;
+    //   // }
+    // }
+     result = Math.round(sum/count); 
+     result = result * 20;
+    this.setState({avg:result});
   }
   handleViewMap = () => {
     console.log("hi");
