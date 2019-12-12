@@ -54,7 +54,7 @@
     "pizzapress": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 66,
       "id": 3,
       "name": "The Pizza Press",
       "name2": "pizzapress",
@@ -71,7 +71,7 @@
     "banditos": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 85,
       "id": 4,
       "name": "Bandito's Mexican Cafe",
       "name2": "banditos",
@@ -88,7 +88,7 @@
     "mong": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 45,
       "id": 5,
       "name": "Ms. Mong",
       "name2": "mong",
@@ -105,7 +105,7 @@
     "suttons": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 52,
       "id": 6,
       "name": "Sutton's Drug Store",
       "name2": "suttons",
@@ -122,7 +122,7 @@
     "panera": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 65,
       "id": 7,
       "name": "Panera Bread",
       "name2": "panera",
@@ -139,7 +139,7 @@
     "chabad": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 45,
       "id": 8,
       "name": "Chabad House",
       "name2": "chabad",
@@ -156,7 +156,7 @@
     "cosmic": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 73,
       "id": 9,
       "name": "Cosmic Cantina",
       "name2": "cosmic",
@@ -173,7 +173,7 @@
     "cp": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 43,
       "id": 10,
       "name": "Curry Point Express",
       "name2": "cp",
@@ -190,7 +190,7 @@
     "sup_dogs": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 68,
       "id": 11,
       "name": "Sup Dogs",
       "name2": "sup_dogs",
@@ -207,7 +207,7 @@
     "lotsa": {
       "count": 0,
       "sum": 0,
-      "score": 0,
+      "score": 56,
       "id": 12,
       "name": "Lotsa Stone Fired Pizza",
       "name2": "lotsa",

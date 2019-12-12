@@ -54,6 +54,7 @@ export class myAccount extends React.Component {
   }
 
   handleUpdateAccount = event => {
+    alert("Preferences Successfully Updated!");
     event.preventDefault();
 
     accountRoot.post('/put', {
@@ -108,10 +109,10 @@ export class myAccount extends React.Component {
 <section class="section">
     <div class="container">
       <h1 class="title">My Preferences:</h1> <br></br>
-      <input onChange={this.saveVegan} type="checkbox" name="Password"/><strong>Vegan</strong> <br></br>
+      <input onChange={this.saveVegan} type="checkbox" name="Password" /><strong>Vegan</strong> <br></br>
       <input onChange={this.saveGF} type="checkbox" name="Password"/><strong>Gluten Free</strong> <br></br>
       <input onChange={this.saveNut} type="checkbox" name="Password"/><strong>Nut Allergy</strong> <br></br>
-      <input onChange={this.saveKosher} type="checkbox" name="Password" checked/><strong>Kosher</strong>
+      <input onChange={this.saveKosher} type="checkbox" name="Password" /><strong>Kosher</strong>
       {/* {...state.kosher===true ? checked = true : checked = false} */}
     </div>
   </section>
