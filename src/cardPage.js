@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Autocomplete from './Autocomplete.js';
+import logo from './image3.jpeg';
+// import logo from './Old-well-banner.jpg';
 // import $ from "jquery";
 //import heroes from './data.js'
 const pubRoot = new axios.create({
@@ -113,16 +115,16 @@ handleFilterChange  = event => {
   renderHeroEditForm = () => {
 
     return (
-     <div id = "fullWidth" className = "card">       
+     <div >       
      <div >
-<div className = "center"class = "section">
-<strong class="title">Filter Options</strong> <br/>
+<div  >
+<strong>Filter Options: </strong>
 
-<input id = "gf" type="checkbox" checked={this.state.gf} onChange={this.handleGfChange} />Gluten Free Options<br/>
-<input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
-<input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
-<input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
-<input onClick={this.handleFilterChange} class="button is-large is-primary" type="submit" value="Filter"/>
+<input className = "gf" id = "gf" type="checkbox" checked={this.state.gf} onChange={this.handleGfChange} />  Gluten Free Options &#09;
+<input className = "k" id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher
+<input className = "n" id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly
+<input className = "v" id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly
+<input class="button is-link" onClick={this.handleFilterChange}  type="submit" value="Filter"/>
 </div>
         </div>
     </div>
@@ -187,11 +189,12 @@ handleSubmitReview = event =>{
     return (
       <div>
         <div>
-        <div className="card" >
-  <div className="card-body">
-    <div className = "card-text"> <h1 id = "center">{this.state.guest === true ? <span>You are a guest, please login
+        <div  >
+  <div >
+    <div > <img src={logo} alt="Logo" /><h1 id = "center2">{this.state.guest === true ? <span>You are a guest, please login
       to gain full access
     </span> : <span>You are logged in</span>}</h1></div>
+    
   </div>
 </div>
           
@@ -201,9 +204,11 @@ handleSubmitReview = event =>{
         <div>
       {/* <h1>React Autocomplete Demo</h1> */}
       <div id = "fullWidth2" className = "card">
-      <section class="container">
-      <div class="section">
-      <h2>Search for a Chapel Hill Restaurant!</h2>
+
+      <div id = "auto" >
+        <div id = "search">
+        Search for a Chapel Hill Restaurant!
+   
       <Autocomplete  
         suggestions={[
           "Hibachi & Co",
@@ -223,15 +228,23 @@ handleSubmitReview = event =>{
       />
       
        <button onClick={this.handleSearch}>Go</button>
-       
-      </div>
-      </section>
+       </div>
+       </div>
+       </div>
+       <div className = "card" id = "hero">
+       {this.renderHeroEditForm()}
+       </div>
+    
+
+
      
-      </div>
+     
       <div >
-        {this.renderHeroEditForm()}
+   
         </div>
     </div>
+<div className = "spaceUp">
+
 
 
 
@@ -239,21 +252,20 @@ handleSubmitReview = event =>{
 
 <div id = "formCard" className = "card" key={id}> 
 <div id = {this.state.heroCards[key].id}   >
-   
-   <h1 class = "title" >{this.state.heroCards[key].name}</h1>
-   <br/>
-   <h1 class = "subtitle" >{this.state.heroCards[key].address}</h1>
-   <p class = "subtitle"> {this.state.heroCards[key].hours}</p>
-   
-   <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
+<img class="card-img-top" src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
+<div class="card-body">
+    <h1 class="card-title title">{this.state.heroCards[key].name}</h1>
+    <p class="card-text">{this.state.heroCards[key].address}<br></br> {this.state.heroCards[key].hours}</p>
+   </div>
+
 
    <iframe width="600" height="450" frameborder="0" /*style="border:0"*/ src={this.state.heroCards[key].src} allowfullscreen></iframe>
 
 
 <form>
           <span>Ratings:</span><progress className="progress is-info" value={this.state.heroCards[key].score} max="100" data-text={this.state.heroCards[key].score}>30</progress>
-         < div >
-<input type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
+         < div id = "centered">
+<input id = "centered" type="radio" onChange={this.setReviewButton.bind(this)}value="1" name="gender"  /> 1
 <input type="radio" onChange={this.setReviewButton.bind(this)} value="2" name="gender" /> 2
 <input type="radio" onChange={this.setReviewButton.bind(this)} value="3" name="gender" /> 3
 <input type="radio" onChange={this.setReviewButton.bind(this)} value="4" name="gender" /> 4
@@ -269,7 +281,7 @@ handleSubmitReview = event =>{
 </div>
 ))}
   </div>
-  
+  </div>
     )
   }
   
