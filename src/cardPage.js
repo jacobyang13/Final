@@ -126,7 +126,7 @@ handleFilterChange  = event => {
 <input id = "kosher" type="checkbox" checked={this.state.kosher} onChange={this.handleKosherChange}/>Kosher<br/>
 <input id = "nut" type="checkbox" checked={this.state.nutAllergy} onChange={this.handleNutChange}/>Nut-Allergy Friendly<br/>
 <input id = "vegan" type="checkbox"  checked={this.state.veganFriendly} onChange={this.handleVeganChange}/>Vegan Friendly<br></br>
-<input onClick={this.handleFilterChange} class="button is-large" type="submit" value="Filter"/>
+<input onClick={this.handleFilterChange} class="button is-large is-primary" type="submit" value="Filter"/>
 </div>
         </div>
     </div>
@@ -244,10 +244,10 @@ handleSubmitReview = event =>{
 <div id = "formCard" className = "card" key={id}> 
 <div id = {this.state.heroCards[key].id}   >
    
-   <h1 className = "title" >{this.state.heroCards[key].name}</h1>
+   <h1 class = "title" >{this.state.heroCards[key].name}</h1>
    <br/>
-   <h1 className = "subtitle" >{this.state.heroCards[key].address}</h1>
-   <p > {this.state.heroCards[key].hours}</p>
+   <h1 class = "subtitle" >{this.state.heroCards[key].address}</h1>
+   <p class = "subtitle"> {this.state.heroCards[key].hours}</p>
    
    <img  src={require("./" + this.state.heroCards[key].img)} alt="Hero Image"/>
 
